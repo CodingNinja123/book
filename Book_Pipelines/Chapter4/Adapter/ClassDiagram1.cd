@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Book_Pipelines.Chapter4.Composite.PipelineDirector">
+    <Position X="8.25" Y="5.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACgAAzgQAAAAQIMAAAAAAAQAAAA=</HashCode>
+      <FileName>Chapter4\Composite\PipelineDirector.cs</FileName>
+      <NewMemberFileName>Chapter4\Adapter\PipelineDirector.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Composite.FileDownloadClient">
+    <Position X="3.75" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Chapter4\Composite\FileDownloadClient.cs</FileName>
+      <NewMemberFileName>Chapter4\Adapter\FileDownloadClient.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Composite.FileUploadClient">
+    <Position X="6.5" Y="3.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAA=</HashCode>
+      <FileName>Chapter4\Composite\SystemAUploadClient.cs</FileName>
+      <NewMemberFileName>Chapter4\Adapter\SystemAUploadClient.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Composite.SystemAApiClient">
+    <Position X="9.5" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAA=</HashCode>
+      <FileName>Chapter4\Composite\SystemAApiClient.cs</FileName>
+      <NewMemberFileName>Chapter4\Adapter\SystemAApiClient.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Composite.SystemCApiClient">
+    <Position X="12.25" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAA=</HashCode>
+      <FileName>Chapter4\Composite\SystemCApiClient.cs</FileName>
+      <NewMemberFileName>Chapter4\Adapter\SystemCApiClient.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Book_Pipelines.Chapter4.Composite.ICommunicationClient&lt;TRequest, TResponse&gt;">
+    <Position X="7.75" Y="1.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Chapter4\Composite\ICommunicationClient.cs</FileName>
+      <NewMemberFileName>Chapter4\Adapter\ICommunicationClient.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

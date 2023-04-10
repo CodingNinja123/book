@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Book_Pipelines.Chapter_2.BuilderAbstractFactory.AbstractPipeline">
+    <Position X="13.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter 2\BuilderAbstractFactory\AbstractPipeline.cs</FileName>
+      <NewMemberFileName>Chapter 2\Builder\AbstractPipeline.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter_2.BuilderAbstractFactory.BaseIoTEvent">
+    <Position X="9.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQ=</HashCode>
+      <FileName>Chapter 2\BuilderAbstractFactory\BaseIoTEvent.cs</FileName>
+      <NewMemberFileName>Chapter 2\Builder\BaseIoTEvent.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter_2.Builder.BaseUploadEvent">
+    <Position X="7.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Chapter 2\Builder\BaseUploadEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter_2.BuilderAbstractFactory.BasicEvent">
+    <Position X="8.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Chapter 2\BuilderAbstractFactory\BasicEvent.cs</FileName>
+      <NewMemberFileName>Chapter 2\Builder\BasicEvent.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter_2.BuilderAbstractFactory.FilePipelineBuilder&lt;T&gt;">
+    <Position X="10.75" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAgAAAAEAAAAAAAABgQAAAAAAAAAAAAE=</HashCode>
+      <FileName>Chapter 2\BuilderAbstractFactory\FilePipelineBuilder.cs</FileName>
+      <NewMemberFileName>Chapter 2\Builder\FilePipelineBuilder.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter_2.BuilderAbstractFactory.FileUploadPipeline">
+    <Position X="12" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AUAEICAYAACAAAAAEgEAAAAAAAABAQBAAAAQAQAgAAA=</HashCode>
+      <FileName>Chapter 2\BuilderAbstractFactory\FileUploadPipeline.cs</FileName>
+      <NewMemberFileName>Chapter 2\Builder\FileUploadPipeline.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter_2.BuilderAbstractFactory.IoTPipeline">
+    <Position X="14.5" Y="9.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AVAEIAAAAACAAAAAEgEAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter 2\BuilderAbstractFactory\IoTPipeline.cs</FileName>
+      <NewMemberFileName>Chapter 2\Builder\IoTPipeline.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter_2.BuilderAbstractFactory.IoTPipelineBuilder&lt;T&gt;">
+    <Position X="16" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAgAAAAEAAAAAAAAAgAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Chapter 2\BuilderAbstractFactory\IoTPipelineBuilder.cs</FileName>
+      <NewMemberFileName>Chapter 2\Builder\IoTPipelineBuilder.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter_2.BuilderAbstractFactory.PipelineDirector">
+    <Position X="13.25" Y="2.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAQIIAADgAAAAAAAAAAAAAAEABAAA=</HashCode>
+      <FileName>Chapter 2\BuilderAbstractFactory\PipelineDirector.cs</FileName>
+      <NewMemberFileName>Chapter 2\Builder\PipelineDirector.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter_2.BuilderAbstractFactory.FactoryCreator">
+    <Position X="5.75" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter 2\BuilderAbstractFactory\FactoryCretator.cs</FileName>
+      <NewMemberFileName>Chapter 2\AbstractFactory\FactoryCretator.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter_2.BuilderAbstractFactory.FileUploadFactory">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter 2\BuilderAbstractFactory\FileFactory.cs</FileName>
+      <NewMemberFileName>Chapter 2\AbstractFactory\FileFactory.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter_2.BuilderAbstractFactory.IoTFactory">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter 2\BuilderAbstractFactory\IoTFactory.cs</FileName>
+      <NewMemberFileName>Chapter 2\AbstractFactory\IoTFactory.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

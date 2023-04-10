@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Book_Pipelines.Chapter_1.Generics
+{
+    public class BasicPipeline: GenericAbstractBasicPipeline<BasicEvent>
+    {
+        public BasicPipeline()
+        {
+            IsPostProcessingEnabled = false;
+            IsPreProcessingEnabled = false;
+        }
+        protected override void ProcessEvent(BasicEvent basicEvent)
+        {
+            WriteLog($"Processing basic event: {basicEvent.Id}");
+        }
+    }
+}

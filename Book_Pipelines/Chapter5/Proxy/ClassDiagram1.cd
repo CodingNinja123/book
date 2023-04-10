@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Book_Pipelines.Chapter5.Proxy.Exceptions.FileCommunicationException" Collapsed="true">
+    <Position X="16.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter5\Proxy\Exceptions\FileCommunicationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Proxy.Exceptions.gRpcCommunicationException" Collapsed="true">
+    <Position X="0.75" Y="3.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter5\Proxy\Exceptions\gRpcCommunicationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Proxy.Exceptions.HttpCommunicationException" Collapsed="true">
+    <Position X="0.75" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter5\Proxy\Exceptions\HttpCommunicationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Proxy.Exceptions.PipelineProcessingException" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter5\Proxy\Exceptions\PipelineProcessingException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Proxy.AbstractPipeline" Collapsed="true">
+    <Position X="4.5" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Chapter5\Proxy\AbstractPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Proxy.DashboardNotificationClient" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAA=</HashCode>
+      <FileName>Chapter5\Proxy\DashboardCommunicationClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Proxy.ExceptionHandlingPipeline">
+    <Position X="4.5" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAgAAEAAAAAAAACAgAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter5\Proxy\ExceptionHandlingPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Proxy.ExceptionHandlingPipelineBuilder&lt;T&gt;">
+    <Position X="7.75" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAIAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter5\Proxy\ExceptionHandlingPipelineBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Proxy.PipelineDirector">
+    <Position X="7.75" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAABAAEAAAACgAAjgQAAAAAAIAAAAAAAQAAAA=</HashCode>
+      <FileName>Chapter5\Proxy\PipelineDirector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="Book_Pipelines.Chapter5.Proxy.RegisterStepExecutionDelegate">
+    <Position X="4.5" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Chapter5\Proxy\AbstractPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

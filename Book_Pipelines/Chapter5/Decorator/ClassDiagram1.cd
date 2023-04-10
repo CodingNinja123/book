@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Book_Pipelines.Chapter5.Decorator.Logging.DateLoggingDecorator">
+    <Position X="10" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter5\Decorator\Logging\DateTimeLoggingDecorator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Decorator.Logging.Logger">
+    <Position X="7.75" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAgAAAAEAAAAACAAAAA=</HashCode>
+      <FileName>Chapter5\Decorator\Logging\ILogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Decorator.Logging.LoggingDestinationDecorator">
+    <Position X="7.25" Y="7.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAABQAAAAAAAAAAAAgAAAAAAAAAAAQIAAA=</HashCode>
+      <FileName>Chapter5\Decorator\Logging\LoggingDestinationDecorator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Decorator.Logging.NewLineLoggingDecorator">
+    <Position X="10" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter5\Decorator\Logging\NewLineLoggingDecorator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Decorator.Logging.FileLogger">
+    <Position X="6" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABQAAAAAAAAAAAAgAAAABAAAAAAQIAIA=</HashCode>
+      <FileName>Chapter5\Decorator\Logging\FileLogger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Decorator.Logging.DashboardLogger">
+    <Position X="10" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABQAAAAAAAAAAAAgAABAAAAEAAAQIAAA=</HashCode>
+      <FileName>Chapter5\Decorator\Logging\DashboardLogger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Decorator.PipelineCreationFacade">
+    <Position X="0.5" Y="3.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAIAAEAEAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Chapter5\Decorator\PipelineCreationFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Decorator.PipelineDirector">
+    <Position X="0.75" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAABAAAAAAACgAAjgQAAAAAAIAAAAAAAQAAAA=</HashCode>
+      <FileName>Chapter5\Decorator\PipelineDirector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Decorator.ExceptionHandlingPipeline">
+    <Position X="3.25" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACCAAAAAgAAgAAEAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter5\Decorator\ExceptionHandlingPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.Decorator.ExceptionHandlingPipelineBuilder&lt;T&gt;">
+    <Position X="3.25" Y="7.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAIAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter5\Decorator\ExceptionHandlingPipelineBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Book_Pipelines.Chapter5.Decorator.Logging.ILoggingDestination">
+    <Position X="7.75" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABQAAAAAAAAAAAAgAAAAAAAAAAAQIAAA=</HashCode>
+      <FileName>Chapter5\Decorator\Logging\ILoggingDestination.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

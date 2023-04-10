@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Book_Pipelines.Chapter4.Flyweight.IoTData" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQ=</HashCode>
+      <FileName>Chapter4\Flyweight\IoTData.cs</FileName>
+      <NewMemberFileName>Chapter4\Composite\IoTData.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Flyweight.BasicEvent" Collapsed="true">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Chapter4\Flyweight\BasicEvent.cs</FileName>
+      <NewMemberFileName>Chapter4\Composite\BasicEvent.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Flyweight.BaseUploadEvent" Collapsed="true">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Chapter4\Flyweight\BaseUploadEvent.cs</FileName>
+      <NewMemberFileName>Chapter4\Composite\BaseUploadEvent.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Flyweight.ReportEvent" Collapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAgAAAAAAAAAAAAAAAAAAgAABAAAQ=</HashCode>
+      <FileName>Chapter4\Flyweight\ReportEvent.cs</FileName>
+      <NewMemberFileName>Chapter4\Composite\ReportEvent.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Flyweight.ReportPipeline">
+    <Position X="6.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAgAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter4\Flyweight\ReportPipeline.cs</FileName>
+      <NewMemberFileName>Chapter4\Composite\ReportPipeline.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Flyweight.AbstractPipeline">
+    <Position X="6.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter4\Flyweight\AbstractPipeline.cs</FileName>
+      <NewMemberFileName>Chapter4\Composite\AbstractPipeline.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Flyweight.PipelineDirector">
+    <Position X="8.75" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAACgAAzgQAAAAQIMAAAAAAAQAAAA=</HashCode>
+      <FileName>Chapter4\Flyweight\PipelineDirector.cs</FileName>
+      <NewMemberFileName>Chapter4\Composite\PipelineDirector.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Book_Pipelines.Chapter4.Flyweight.IBasicEvent" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Chapter4\Flyweight\IBasicEvent.cs</FileName>
+      <NewMemberFileName>Chapter4\Composite\IBasicEvent.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Book_Pipelines.Chapter4.Flyweight.IUploadEventData" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Chapter4\Flyweight\IUploadEventData.cs</FileName>
+      <NewMemberFileName>Chapter4\Composite\IUploadEventData.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Book_Pipelines.Chapter4.Flyweight.IIoTEventData" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQ=</HashCode>
+      <FileName>Chapter4\Flyweight\IIoTEventData.cs</FileName>
+      <NewMemberFileName>Chapter4\Composite\IIoTEventData.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
