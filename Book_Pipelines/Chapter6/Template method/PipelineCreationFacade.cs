@@ -14,7 +14,7 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
             ICommunicationClient<string, string> searchApiClient, ICommunicationClient<string, string> storeApiClient
             ) 
         {
-            var typeAPipelineBuilder = new FilePipelineBuilder<FileUploadPipeline<IUploadEventData>, IUploadEventData>();
+            var typeAPipelineBuilder = new FilePipelineBuilder<FileUploadPipeline>();
             return BuildExceptionHandlingPipeline(typeAPipelineBuilder.
                 ShouldBeFilePreprocessed(shouldBeFileProcessed).
                 ShouldBeEventStored(shouldEventBeStored).
@@ -25,19 +25,22 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
                 SetStoreApiClient(storeApiClient).
                 Build());
         }
-        public static AbstractPipeline<T> BuildIoTPipeline<T>(bool shouldSaveMetadata, ICommunicationClient<IoTData, string> apiClient)
-            where T : IIoTEventData
+        public static AbstractPipeline<IIoTEventData> BuildIoTPipeline(bool shouldSaveMetadata, ICommunicationClient<IoTData, string> apiClient)
         {
-            var typeCPipelineBuilder = new IoTPipelineBuilder<IoTPipeline<T>, T>();
+            var typeCPipelineBuilder = new IoTPipelineBuilder<IoTPipeline>();
             return BuildExceptionHandlingPipeline(typeCPipelineBuilder.
                 ShouldSaveMetadata(shouldSaveMetadata).
                 SetTargetApiClient(apiClient).
                 Build());
         }
 
-        public static AbstractPipeline<T> BuildReportPipeline<T>(List<AbstractPipeline<T>> pipelines) where T : IBasicEvent
+        public static AbstractPipeline<ReportEvent> BuildReportPipeline(AbstractPipeline<IIoTEventData> iotPipeline, 
+            AbstractPipeline<IUploadEventData> uploadPipeline)
         {
-            return BuildExceptionHandlingPipeline(new ReportPipeline<T>(pipelines));
+            var reportPipeline = new ReportPipeline();
+            reportPipeline.IoTTPipeline = iotPipeline;
+            reportPipeline.UploadPipeline = uploadPipeline;
+            return BuildExceptionHandlingPipeline(reportPipeline);
         }
         private static AbstractPipeline<T> BuildExceptionHandlingPipeline<T>(AbstractPipeline<T> internalPipeline) where T : IBasicEvent
         {

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Book_Pipelines.Chapter5.TemplateMethod
 {
-    public class ReportFactory : AbstractFactory<IBasicEvent>
+    public class ReportFactory : AbstractFactory<ReportEvent>
     {
-        public override AbstractPipeline<IBasicEvent> GetPipeline(BasicEvent basicEvent)
+        public override AbstractPipeline<ReportEvent> GetPipeline(BasicEvent basicEvent)
         {
             return basicEvent.Type switch
             {

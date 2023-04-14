@@ -13,7 +13,7 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
         {
             return basicEvent.Type switch
             {
-                "TypeC" => PipelineDirector.BuildTypeCPipeline<IIoTEventData>(),
+                "TypeC" => PipelineDirector.BuildTypeCPipeline(),
                 _ => throw new NotImplementedException()
             };
         }

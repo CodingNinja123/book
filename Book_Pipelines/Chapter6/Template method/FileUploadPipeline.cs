@@ -7,24 +7,19 @@ using System.Threading.Tasks;
 
 namespace Book_Pipelines.Chapter5.TemplateMethod
 {
-    public class FileUploadPipeline<T> : AbstractPipeline<T> where T : IUploadEventData
+    public class FileUploadPipeline : AbstractPipeline<IUploadEventData>
     {
-        public bool ShouldSaveMetadata { get; set; }
-        public bool ShouldBeFilePreprocessed { get; set; }
-        public bool ShouldBeEventStored { get; set; }
         public ICommunicationClient<UploadFileInfo, int> UploadFileClient { get; set; }
         public ICommunicationClient<string, string> TargetSystemSearchApiClient { get; set; }
         public ICommunicationClient<string, string> TargetSystemStoreApiClient { get; set; }
         public ICommunicationClient<string, byte[]> DownloadFileClient { get; set; }
 
-        protected override void Preprocess(T basicEvent)
+        protected override void Preprocess(IUploadEventData basicEvent)
         {
-            if(!ShouldBeFilePreprocessed) return;
             RegisterStep(basicEvent, "EVENT_PREPROCESSING");
             DownloadFileClient.ExecuteRequest(basicEvent.FileUrl);
         }
-
-        protected override void ProcessEvent(T basicEvent)
+        protected override void ProcessEvent(IUploadEventData basicEvent)
         {
             if (UploadFileClient == null)
                 return;
@@ -36,33 +31,26 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
                 Content = new byte[0]
             });
         }
-
-        protected override void Search(T basicEvent)
+        protected override void Search(IUploadEventData basicEvent)
         {
             RegisterStep(basicEvent, "EVENT_SEARCH");
             TargetSystemSearchApiClient.ExecuteRequest(basicEvent.FileName);
         }
-
-        protected override void Store(T basicEvent)
+        protected override void Store(IUploadEventData basicEvent)
         {
-            if (!ShouldBeEventStored) return;
             RegisterStep(basicEvent, "EVENT_STORE");
             TargetSystemStoreApiClient.ExecuteRequest(basicEvent.FileName);
         }
-
-        protected override Guid SaveMetadata(T basicEvent)
+        protected override Guid SaveMetadata(IUploadEventData basicEvent)
         {
-            if(!ShouldSaveMetadata) return Guid.Empty; 
             RegisterStep(basicEvent, "SAVE_METADATA");
             return Guid.NewGuid();
         }
-        protected override void UpdateMetadata(T basicEvent)
+        protected override void UpdateMetadata(IUploadEventData basicEvent)
         {
-            if(!ShouldSaveMetadata) return;
             RegisterStep(basicEvent, "UPDATE_PROCESSING");
         }
-        
-        protected override void Validate(T basicEvent)
+        protected override void Validate(IUploadEventData basicEvent)
         {
             if (basicEvent.FileName == null)
                 throw new PipelineProcessingException("Filename of the event cannot be null");

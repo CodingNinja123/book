@@ -7,7 +7,6 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
     {
         private AbstractPipeline<T> internalPipeline;
         private Logger loggingClient;
-
         public Logger LoggingClient
         {
             set
@@ -16,12 +15,10 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
                 loggingClient.StartSession(Guid.NewGuid());
             }
         }
-
         public ExceptionHandlingPipeline()
         {
             this.RegisterStepExecution += RegisterStepExecutionHandler;
         }
-
         public AbstractPipeline<T> Pipeline
         {
             set
@@ -33,13 +30,11 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
                 this.internalPipeline.RegisterStepExecution += RegisterStepExecutionHandler;
             }
         }
-
         private void RegisterStepExecutionHandler(IBasicEvent basicEvent, string step)
         {
             var message = $"Executing step: {step} for event: {basicEvent.Id}-{basicEvent.Source}-{basicEvent.Type}";
             loggingClient.Log(message);
         }
-
         public override void Process(T basicEvent)
         {
             try

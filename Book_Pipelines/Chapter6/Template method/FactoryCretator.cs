@@ -11,13 +11,13 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
     {
         private static AbstractFactory<IIoTEventData> iotFactory;
         private static AbstractFactory<IUploadEventData> fileUploadFactory;
-        //private static AbstractFactory<ReportEvent> reportFactory;
+        private static AbstractFactory<ReportEvent> reportFactory;
 
         static FactoryCreator()
         {
             iotFactory = new IoTFactory();
             fileUploadFactory = new FileUploadFactory();    
-            //reportFactory = new ReportFactory();    
+            reportFactory = new ReportFactory();    
         }
 
         public static void Execute(BasicEvent basicEvent)
@@ -32,6 +32,11 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
                 case ("FILE"):
                     {
                         fileUploadFactory.GetPipeline(basicEvent).Process(basicEvent as BaseUploadEvent);
+                        break;
+                    }
+                case ("REPORT"):
+                    {
+                        reportFactory.GetPipeline(basicEvent).Process(basicEvent as ReportEvent);
                         break;
                     }
                 default:

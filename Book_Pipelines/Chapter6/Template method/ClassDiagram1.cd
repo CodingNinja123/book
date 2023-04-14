@@ -1,86 +1,129 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.Logging.DateLoggingDecorator">
-    <Position X="10" Y="7.25" Width="2.25" />
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.AbstractFactory&lt;T&gt;">
+    <Position X="9.25" Y="5.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter5\Decorator\Logging\DateTimeLoggingDecorator.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter6\Template method\AbstractFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.Logging.Logger">
-    <Position X="7.75" Y="3" Width="1.75" />
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.AbstractPipeline&lt;T&gt;">
+    <Position X="3.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAgAAAAEAAAAACAAAAA=</HashCode>
-      <FileName>Chapter5\Decorator\Logging\ILogger.cs</FileName>
+      <HashCode>BEAEIAAIAACAAABAAgEAAAAAAAAAAQAAAAAAAQAgACA=</HashCode>
+      <FileName>Chapter6\Template method\AbstractPipeline.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.Logging.LoggingDestinationDecorator">
-    <Position X="7.25" Y="7.75" Width="2.5" />
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.ExceptionHandlingPipeline&lt;T&gt;">
+    <Position X="3" Y="5.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAABQAAAAAAAAAAAAgAAAAAAAAAAAQIAAA=</HashCode>
-      <FileName>Chapter5\Decorator\Logging\LoggingDestinationDecorator.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.Logging.NewLineLoggingDecorator">
-    <Position X="10" Y="9.25" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter5\Decorator\Logging\NewLineLoggingDecorator.cs</FileName>
+      <HashCode>AAAAAAACCAAAAAgAAgAAEAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter6\Template method\ExceptionHandlingPipeline.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.Logging.FileLogger">
-    <Position X="6" Y="4" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.ExceptionHandlingPipelineBuilder&lt;T, T1&gt;">
+    <Position X="5.5" Y="9.75" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABQAAAAAAAAAAAAgAAAABAAAAAAQIAIA=</HashCode>
-      <FileName>Chapter5\Decorator\Logging\FileLogger.cs</FileName>
+      <HashCode>AAEAAAAAAAIAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter6\Template method\ExceptionHandlingPipelineBuilder.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.Logging.DashboardLogger">
-    <Position X="10" Y="4" Width="1.5" />
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.FactoryCreator">
+    <Position X="13.25" Y="1.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABQAAAAAAAAAAAAgAABAAAAEAAAQIAAA=</HashCode>
-      <FileName>Chapter5\Decorator\Logging\DashboardLogger.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAQAAgAAAAAAAAAAAAAAIAABAAAAAAA=</HashCode>
+      <FileName>Chapter6\Template method\FactoryCretator.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.FileUploadFactory">
+    <Position X="9" Y="7.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter6\Template method\FileFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.FilePipelineBuilder&lt;T&gt;">
+    <Position X="8.75" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAEgAAAAMAQAAAAAABgQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter6\Template method\FilePipelineBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.FileUploadPipeline">
+    <Position X="0.5" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AEAEMAAIAACAAAAgAAEAAAAAAAABAQAAQAAAAQAgAAE=</HashCode>
+      <FileName>Chapter6\Template method\FileUploadPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.IoTFactory">
+    <Position X="12" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter6\Template method\IoTFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.IoTPipeline">
+    <Position X="6" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AEAEIAAAAACAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter6\Template method\IoTPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.IoTPipelineBuilder&lt;T&gt;">
+    <Position X="2.5" Y="9.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAEBAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter6\Template method\IoTPipelineBuilder.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter5.TemplateMethod.PipelineCreationFacade">
-    <Position X="0.5" Y="3.75" Width="2.5" />
+    <Position X="18" Y="1.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAIAAEAEAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
-      <FileName>Chapter5\Decorator\PipelineCreationFacade.cs</FileName>
+      <FileName>Chapter6\Template method\PipelineCreationFacade.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter5.TemplateMethod.PipelineDirector">
-    <Position X="0.75" Y="6" Width="2" />
+    <Position X="15.5" Y="1.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AACCAAAAABAAAAAAACgAAjgQAAAAAAIAAAAAAAQAAAA=</HashCode>
-      <FileName>Chapter5\Decorator\PipelineDirector.cs</FileName>
+      <FileName>Chapter6\Template method\PipelineDirector.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.ExceptionHandlingPipeline">
-    <Position X="3.25" Y="3.75" Width="2.25" />
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.ReportFactory">
+    <Position X="6.5" Y="7.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACCAAAAAgAAgAAEAAAAAAAACAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter5\Decorator\ExceptionHandlingPipeline.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter6\Template method\ReportFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.ExceptionHandlingPipelineBuilder&lt;T&gt;">
-    <Position X="3.25" Y="7.25" Width="2.75" />
+  <Class Name="Book_Pipelines.Chapter5.TemplateMethod.ReportPipeline">
+    <Position X="6" Y="4" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAIAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter5\Decorator\ExceptionHandlingPipelineBuilder.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Chapter6\Template method\ReportPipeline.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="Book_Pipelines.Chapter5.TemplateMethod.Logging.ILoggingDestination">
-    <Position X="7.75" Y="5.5" Width="1.75" />
+  <Interface Name="Book_Pipelines.Chapter5.TemplateMethod.IBasicEvent">
+    <Position X="9.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABQAAAAAAAAAAAAgAAAAAAAAAAAQIAAA=</HashCode>
-      <FileName>Chapter5\Decorator\Logging\ILoggingDestination.cs</FileName>
+      <HashCode>AAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Chapter6\Template method\IBasicEvent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Book_Pipelines.Chapter5.TemplateMethod.IIoTEventData">
+    <Position X="10.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQ=</HashCode>
+      <FileName>Chapter6\Template method\IIoTEventData.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Book_Pipelines.Chapter5.TemplateMethod.IUploadEventData">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Chapter6\Template method\IUploadEventData.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

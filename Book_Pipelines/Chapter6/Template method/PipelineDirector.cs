@@ -25,15 +25,14 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
             return PipelineCreationFacade.BuildFileUploadPipeline(true, false, false,
                 fileUploadBClient, fileDownloadClient, systemASearchClient, null);
         }
-        public static AbstractPipeline<T> BuildTypeCPipeline<T>() where T: IIoTEventData
+        public static AbstractPipeline<IIoTEventData> BuildTypeCPipeline() 
         {
-            return PipelineCreationFacade.BuildIoTPipeline<T>(true, systemCApiClient);
+            return PipelineCreationFacade.BuildIoTPipeline(true, systemCApiClient);
         }
 
-        public static AbstractPipeline<IBasicEvent> BuildReportPipeline()
+        public static AbstractPipeline<ReportEvent> BuildReportPipeline()
         {
-            throw new NotImplementedException("Implement Report Pipeline");
-            // return PipelineCreationFacade.BuildReportPipeline(new List<AbstractPipeline<IBasicEvent>> { BuildTypeBPipeline(), BuildTypeCPipeline() });
+            return PipelineCreationFacade.BuildReportPipeline(BuildTypeCPipeline(), BuildTypeBPipeline());
         }
     }
 }

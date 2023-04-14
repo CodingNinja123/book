@@ -1,7 +1,6 @@
 ﻿namespace Book_Pipelines.Chapter5.TemplateMethod
 {
     public delegate void RegisterStepExecutionDelegate(IBasicEvent basicEvent, string step);
-
     public abstract class AbstractPipeline<T> where T : IBasicEvent
     {
         public event RegisterStepExecutionDelegate RegisterStepExecution;
@@ -28,19 +27,15 @@
 
         protected virtual void Preprocess(T basicEvent)
         {
-
         }
         protected virtual void ProcessEvent(T basicEvent)
         {
-
         }
         protected virtual void Search(T basicEvent)
         {
-
         }
         protected virtual void Store(T basicEvent)
         {
-
         }
         protected virtual Guid SaveMetadata(T basicEvent)
         {
@@ -48,11 +43,9 @@
         }
         protected virtual void UpdateMetadata(T basicEvent)
         {
-
         }
         protected virtual void Validate(T basicEvent)
         {
-
         }
     }
 }

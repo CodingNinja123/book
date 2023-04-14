@@ -1,17 +1,14 @@
 ﻿namespace Book_Pipelines.Chapter5.TemplateMethod
 {
-    public class ReportPipeline<T> : AbstractPipeline<T> where T : IBasicEvent
+    public class ReportPipeline : AbstractPipeline<ReportEvent> 
     {
-        private List<AbstractPipeline<T>> pipelines;
+        public AbstractPipeline<IUploadEventData> UploadPipeline { get; set; }
+        public AbstractPipeline<IIoTEventData> IoTTPipeline { get; set; }
 
-        public ReportPipeline(List<AbstractPipeline<T>> pipelines)
+        public override void Process(ReportEvent basicEvent)
         {
-            this.pipelines = pipelines;
-        }
-
-        public override void Process(T basicEvent)
-        {
-            pipelines.ForEach(x => x.Process(basicEvent));
+            this.UploadPipeline.Process(basicEvent);
+            this.IoTTPipeline.Process(basicEvent);
         }
     }
 }
