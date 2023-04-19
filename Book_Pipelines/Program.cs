@@ -14,10 +14,11 @@ using Book_Pipelines.Chapter5.Decorator;
 using Book_Pipelines.Chapter5.Facade;
 using Book_Pipelines.Chapter5.Proxy;
 using Book_Pipelines.Chapter5.TemplateMethod;
+using Book_Pipelines.Chapter6.Strategy;
 using System.Runtime.CompilerServices;
 
 //InheritanceModule.Main();
 // Chapter2Main.Main();
 // BuilderAndAbstractFactorySection.Main();
 
-TemplateMethodSection.Main();
+StrategyMethodSection.Main();
