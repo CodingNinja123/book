@@ -1,4 +1,5 @@
 ﻿using Book_Pipelines.Chapter3.Prototype;
+using Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain;
 using System.Diagnostics;
 using System.Reflection.Metadata.Ecma335;
 
@@ -15,15 +16,15 @@ namespace Book_Pipelines.Chapter6.ChainOfResponsibility
         private static SystemCApiClient systemCApiClient = new (config.CSystemApi);
         private static DashboardNotificationClient dashboardClient = new(config.DashboardLoggingUrl);
 
-        public static AbstractPipeline<IUploadEventData> BuildTypeAPipeline()
+        public static Processor BuildTypeAPipeline()
         {
             return PipelineCreationFacade.BuildFileUploadPipelineA(fileUploadAClient, fileDownloadClient, systemASearchClient, systemAStoreClient);
         }
-        public static AbstractPipeline<IUploadEventData> BuildTypeBPipeline()
+        public static Processor BuildTypeBPipeline()
         {
             return PipelineCreationFacade.BuildFileUploadPipelineB(fileUploadBClient, fileDownloadClient, systemASearchClient, null);
         }
-        public static AbstractPipeline<IIoTEventData> BuildTypeCPipeline() 
+        public static Processor BuildTypeCPipeline() 
         {
             return PipelineCreationFacade.BuildIoTPipeline(systemCApiClient);
         }

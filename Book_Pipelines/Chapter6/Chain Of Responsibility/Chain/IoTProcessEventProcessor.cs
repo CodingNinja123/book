@@ -25,6 +25,7 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
             if (uploadData == null)
                 throw new ArgumentException(nameof(request));
 
+            RegisterStep(request, "EVENT_PROCESSING");
             var data = new IoTData(uploadData.Source, uploadData.Action, uploadData.Value);
             SystemCApiClient.ExecuteRequest(data);
 

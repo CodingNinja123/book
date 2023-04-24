@@ -24,18 +24,18 @@ namespace Book_Pipelines.Chapter6.ChainOfResponsibility
             {
                 case "IOT":
                     {
-                        iotFactory.GetPipeline(basicEvent).ProcessEvent(basicEvent as BaseIoTEvent);
+                        iotFactory.GetPipeline(basicEvent).Process(basicEvent as BaseIoTEvent);
                         break;
                     }
                 case ("FILE"):
                     {
-                        fileUploadFactory.GetPipeline(basicEvent).ProcessEvent(basicEvent as IUploadEventData);   
+                        fileUploadFactory.GetPipeline(basicEvent).Process(basicEvent as IUploadEventData);   
                         break;
                     }
                 case ("REPORT"):
                     {
-                        fileUploadFactory.GetPipeline(basicEvent).ProcessEvent(basicEvent as IUploadEventData);
-                        iotFactory.GetPipeline(basicEvent).ProcessEvent(basicEvent as IIoTEventData);
+                        fileUploadFactory.GetPipeline(basicEvent).Process(basicEvent as IUploadEventData);
+                        iotFactory.GetPipeline(basicEvent).Process(basicEvent as IIoTEventData);
                         break;
                     }
                 default:

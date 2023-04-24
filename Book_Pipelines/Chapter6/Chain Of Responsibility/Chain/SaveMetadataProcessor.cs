@@ -15,7 +15,7 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
 
         public override void Process(IBasicEvent request)
         {
-            // Just do nothing
+            RegisterStep(request, "SAVE_METADATA");
             base.Process(request);
         }
     }

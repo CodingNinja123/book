@@ -20,7 +20,7 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
             var uploadData = request as IUploadEventData;
             if (uploadData == null)
                 throw new ArgumentException(nameof(request));
-
+            RegisterStep(request, "EVENT_SEARCH");
             TargetSystemSearchApiClient.ExecuteRequest(uploadData.FileName);
 
             base.Process(request);

@@ -25,6 +25,8 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
             if (uploadData == null)
                 throw new ArgumentException(nameof(request));
 
+            RegisterStep(request, "EVENT_PROCESSING");
+
             this.UploadFileClient.ExecuteRequest(new UploadFileInfo
             {
                 FileName = uploadData.FileName,

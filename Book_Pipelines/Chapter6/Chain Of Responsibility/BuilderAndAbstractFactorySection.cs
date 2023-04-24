@@ -4,34 +4,7 @@ using System.Diagnostics;
 
 namespace Book_Pipelines.Chapter6.ChainOfResponsibility
 {
-    public interface A
-    {
-
-    }
-    public interface B
-    {
-        void ninja();
-    }
-    public class C: A, B
-    {
-        public void ninja()
-        {
-
-        }
-    }
-    class NodeItem<T> where T : A { }
-    class SpecialNodeItem<T> : NodeItem<T> where T : A, B { 
-    
-        public void a(T obj)
-        {
-            obj.ninja();
-        }
-    
-    }
-
-
-
-    public class StrategyMethodSection
+    public class CoRSection
     {
         public static void Main()
         {

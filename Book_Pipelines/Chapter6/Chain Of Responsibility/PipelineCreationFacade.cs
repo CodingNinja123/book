@@ -1,66 +1,61 @@
-﻿using Book_Pipelines.Chapter6.ChainOfResponsibility.Logging;
+﻿using Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain;
+using Book_Pipelines.Chapter6.ChainOfResponsibility.Logging;
 namespace Book_Pipelines.Chapter6.ChainOfResponsibility
 {
     public static class PipelineCreationFacade
     {
-        public static AbstractPipeline<IUploadEventData> BuildFileUploadPipelineA(ICommunicationClient<UploadFileInfo, int> fileUploadClient,
+        public static Processor BuildFileUploadPipelineA(ICommunicationClient<UploadFileInfo, int> fileUploadClient,
             ICommunicationClient<string, byte[]> fileDownloadClient, ICommunicationClient<string, string> searchApiClient,
             ICommunicationClient<string, string> storeApiClient
             )
         {
-            var typeAPipelineBuilder = new FilePipelineBuilder<FileUploadPipeline>();
-            var pipeline = typeAPipelineBuilder.
-                SetUploadClient(fileUploadClient).
-                SetDownloadClient(fileDownloadClient).
-                SetSearchApiClient(searchApiClient).
-                SetStoreApiClient(storeApiClient).
-                Build();
-            var strategy = new FileUploadStrategyA(pipeline);
-            return BuildExceptionHandlingPipeline(pipeline, strategy);
+            Processor proc = new ExceptionHandlingProcessor(new SaveMetadataProcessor(
+                new ValidateProcessor(
+                    new PreProcessProcessor(
+                        new SearchProcessor(
+                            new ProcessEventProcessor(
+                                new StoreProcessor(
+                                    new UpdateMetadataProcessor(null),
+                                    storeApiClient),
+                                fileUploadClient),
+                            searchApiClient),
+                        fileDownloadClient))), GetFileLogger());
+            return proc;
         }
-        public static AbstractPipeline<IUploadEventData> BuildFileUploadPipelineB(ICommunicationClient<UploadFileInfo, int> fileUploadClient,
+        public static Processor BuildFileUploadPipelineB(ICommunicationClient<UploadFileInfo, int> fileUploadClient,
             ICommunicationClient<string, byte[]> fileDownloadClient, ICommunicationClient<string, string> searchApiClient,
             ICommunicationClient<string, string> storeApiClient
             )
         {
-            
-            var typeAPipelineBuilder = new FilePipelineBuilder<FileUploadPipeline>();
-            var pipeline = typeAPipelineBuilder.
-                SetUploadClient(fileUploadClient).
-                SetDownloadClient(fileDownloadClient).
-                SetSearchApiClient(searchApiClient).
-                SetStoreApiClient(storeApiClient).
-                Build();
-            FileUploadStrategyB strategy = new FileUploadStrategyB(pipeline);
-            return BuildExceptionHandlingPipeline(pipeline, strategy);
+            var theLast = new ProcessEventProcessor(
+                            null, fileUploadClient);
+            Processor proc = new ExceptionHandlingProcessor(new ValidateProcessor(
+                new PreProcessProcessor(
+                    new SearchProcessor(
+                        new ProcessEventProcessor(
+                            null, fileUploadClient),
+                        searchApiClient),
+                    fileDownloadClient)), GetFileLogger());
+
+            return proc;
         }
 
 
-        public static AbstractPipeline<IIoTEventData> BuildIoTPipeline(ICommunicationClient<IoTData, string> apiClient)
+        public static Processor BuildIoTPipeline(ICommunicationClient<IoTData, string> apiClient)
         {
-            var typeCPipelineBuilder = new IoTPipelineBuilder<IoTPipeline>();
-            var pipeline = typeCPipelineBuilder.
-                SetTargetApiClient(apiClient).
-                Build();
-            IoTStrategy strategy = new IoTStrategy(pipeline);
-            return BuildExceptionHandlingPipeline(pipeline, strategy);
+            Processor processor = new ExceptionHandlingProcessor(new SaveMetadataProcessor(
+                new IoTValidateProcessor(
+                    new IoTProcessEventProcessor(
+                        new UpdateMetadataProcessor(null),
+                apiClient))), GetFileLogger());
+
+            return processor;
         }
 
-        private static AbstractPipeline<T> BuildExceptionHandlingPipeline<T>(AbstractPipeline<T> internalPipeline, 
-            IStrategy<T> processingStrategy) where T : IBasicEvent
+        private static Logger GetFileLogger()
         {
-            var exceptionPipelineBuilder = new ExceptionHandlingPipelineBuilder<ExceptionHandlingPipeline<T>, T>();
-            return exceptionPipelineBuilder.
-                SetLoggingClient(GetFileLogger()).
-                SetInternalPipeline(internalPipeline).
-                SetProcessingStrategy(processingStrategy).
-                Build();
-        }
-
-        private static ILoggingDestination GetFileLogger()
-        {
-            var fileLogger = new DashboardLogger();
-            return new NewLineLoggingDecorator(
+            var fileLogger = new FileLogger();
+            return new Logger(
                         new DateLoggingDecorator(
                             new LoggingDestinationDecorator(fileLogger)));
         }

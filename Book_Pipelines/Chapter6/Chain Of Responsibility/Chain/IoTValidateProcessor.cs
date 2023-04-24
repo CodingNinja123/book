@@ -16,6 +16,7 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
 
         public override void Process(IBasicEvent request)
         {
+            RegisterStep(request, "EVENT_VALIDATION");
             var basicEvent = request as IIoTEventData;
 
             if (basicEvent.Action == null)

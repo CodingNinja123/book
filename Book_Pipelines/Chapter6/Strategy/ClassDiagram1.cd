@@ -59,6 +59,20 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="Book_Pipelines.Chapter6.Strategy.FilePipelineBuilder&lt;T&gt;">
+    <Position X="14.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAEgAAAAIAQAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter6\Strategy\FilePipelineBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter6.Strategy.IoTPipelineBuilder&lt;T&gt;">
+    <Position X="14.5" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAABAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter6\Strategy\IoTPipelineBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="Book_Pipelines.Chapter6.Strategy.IStrategy&lt;T&gt;">
     <Position X="8.25" Y="1.25" Width="1.75" />
     <TypeIdentifier>

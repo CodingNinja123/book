@@ -20,7 +20,7 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
             var uploadRequest = request as IUploadEventData;
             if (uploadRequest == null)
                 throw new ArgumentException(nameof(request));
-
+            RegisterStep(request, "EVENT_STORE");
             TargetSystemStoreApiClient.ExecuteRequest(uploadRequest.FileName);
             base.Process(request);
         }

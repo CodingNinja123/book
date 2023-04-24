@@ -18,6 +18,7 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
 
         public override void Process(IBasicEvent request)
         {
+            RegisterStep(request, "EVENT_PREPROCESSING");
             var uploadData = request as IUploadEventData;
             if (uploadData == null)
                 throw new ArgumentException(nameof(request));

@@ -1,47 +1,33 @@
-﻿using Book_Pipelines.Chapter6.ChainOfResponsibility.Exceptions;
+﻿using Book_Pipelines.Chapter6.ChainOfResponsibility;
+using Book_Pipelines.Chapter6.ChainOfResponsibility.Exceptions;
 using Book_Pipelines.Chapter6.ChainOfResponsibility.Logging;
 
-namespace Book_Pipelines.Chapter6.ChainOfResponsibility
+namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
 {
-    public class ExceptionHandlingPipeline<T> : AbstractPipeline<T> where T : IBasicEvent
+    public class ExceptionHandlingProcessor : Processor
     {
-        private AbstractPipeline<T> internalPipeline;
-        private Logger loggingClient;
-        public IStrategy<T> Strategy { get; set; }
-        public Logger LoggingClient
-        {
-            set
-            {
-                loggingClient = value;
-                loggingClient.StartSession(Guid.NewGuid());
-            }
-        }
-        public ExceptionHandlingPipeline()
+        public Logger LogginClient { get; set; }
+
+        public ExceptionHandlingProcessor(Processor nextProcessor, Logger loggingClient) : base(nextProcessor)
         {
             this.RegisterStepExecution += RegisterStepExecutionHandler;
+            nextProcessor.RegisterStepExecution += RegisterStepExecutionHandler;
+            this.LogginClient = loggingClient;
+            this.LogginClient.StartSession(Guid.NewGuid());
         }
-        public AbstractPipeline<T> Pipeline
-        {
-            set
-            {
-                if (this.internalPipeline != null)
-                    this.internalPipeline.RegisterStepExecution -= RegisterStepExecutionHandler;
 
-                this.internalPipeline = value;
-                this.internalPipeline.RegisterStepExecution += RegisterStepExecutionHandler;
-            }
-        }
         private void RegisterStepExecutionHandler(IBasicEvent basicEvent, string step)
         {
             var message = $"Executing step: {step} for event: {basicEvent.Id}-{basicEvent.Source}-{basicEvent.Type}";
-            loggingClient.Log(message);
+            LogginClient.Log(message);
         }
-        public override void ProcessEvent(T basicEvent)
+
+        public override void Process(IBasicEvent basicEvent)
         {
             try
             {
                 RegisterStep(basicEvent, "PROCESSING_STARTED");
-                Strategy.Process(basicEvent);
+                base.Process(basicEvent);
                 RegisterStep(basicEvent, "PROCESSING_FINISHED");
             }
             catch (gRpcCommunicationException)
@@ -66,7 +52,7 @@ namespace Book_Pipelines.Chapter6.ChainOfResponsibility
             }
             finally
             {
-                loggingClient.EndSession();
+                LogginClient.EndSession();
             }
         }
     }

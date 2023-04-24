@@ -1,4 +1,5 @@
 ﻿using Book_Pipelines.Chapter_2.AbstractFactoryNM;
+using Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Book_Pipelines.Chapter6.ChainOfResponsibility
 {
     public class IoTFactory: AbstractFactory<IIoTEventData>
     {
-        public override AbstractPipeline<IIoTEventData> GetPipeline(BasicEvent basicEvent)
+        public override Processor GetPipeline(BasicEvent basicEvent)
         {
             return basicEvent.Type switch
             {

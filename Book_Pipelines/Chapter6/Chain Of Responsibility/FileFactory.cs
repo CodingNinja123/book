@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Book_Pipelines.Chapter6.ChainOfResponsibility
 {
     public class FileUploadFactory: AbstractFactory<IUploadEventData>
     {
-        public override AbstractPipeline<IUploadEventData> GetPipeline(BasicEvent basicEvent)
+        public override Processor GetPipeline(BasicEvent basicEvent)
         {
             return basicEvent.Type switch
             {
