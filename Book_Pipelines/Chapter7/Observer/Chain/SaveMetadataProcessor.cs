@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
+namespace Book_Pipelines.Chapter7.Chain_Of_Responsibility.Observer
 {
     public class SaveMetadataProcessor : Processor
     {
@@ -15,7 +15,8 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
 
         public override void Process(IBasicEvent request)
         {
-            RegisterStep(request, "SAVE_METADATA");
+            // RegisterStep(request, "SAVE_METADATA");
+            Notify(request, "SAVE_METADATA");
             base.Process(request);
         }
     }

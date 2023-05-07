@@ -16,10 +16,11 @@ using Book_Pipelines.Chapter5.Proxy;
 using Book_Pipelines.Chapter5.TemplateMethod;
 using Book_Pipelines.Chapter6.ChainOfResponsibility;
 using Book_Pipelines.Chapter6.Strategy;
+using Book_Pipelines.Chapter7.Observer;
 using System.Runtime.CompilerServices;
 
 //InheritanceModule.Main();
 // Chapter2Main.Main();
 // BuilderAndAbstractFactorySection.Main();
 
-CoRSection.Main();
+ObserverSection.Main();

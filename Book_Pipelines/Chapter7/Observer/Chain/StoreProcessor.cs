@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
+namespace Book_Pipelines.Chapter7.Chain_Of_Responsibility.Observer
 {
     public class StoreProcessor : Processor
     {
@@ -20,7 +20,8 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
             var uploadRequest = request as IUploadEventData;
             if (uploadRequest == null)
                 throw new ArgumentException(nameof(request));
-            RegisterStep(request, "EVENT_STORE");
+            // RegisterStep(request, "EVENT_STORE");
+            Notify(request, "EVENT_STORE");
             TargetSystemStoreApiClient.ExecuteRequest(uploadRequest.FileName);
             base.Process(request);
         }

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Book_Pipelines.Chapter7.Chain_Of_Responsibility.Visitor.ExceptionHandlingProcessor">
+    <Position X="4.5" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAgAAAAAAAAAAACAAAAAIAAAAAAA=</HashCode>
+      <FileName>Chapter7\Observer\Chain\ExceptionHandlingProcessor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter7.Chain_Of_Responsibility.Visitor.Processor">
+    <Position X="8" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAgAAAAAAAoACAAJAQAAAAAAAACA=</HashCode>
+      <FileName>Chapter7\Observer\Chain\Processor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Book_Pipelines.Chapter7.Visitor.Chain.IChainEventListener">
+    <Position X="5.75" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter7\Observer\Chain\IChainEventListener.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Book_Pipelines.Chapter7.Visitor.Chain.IChainEventPublisher">
+    <Position X="8" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAABAQAAAAAAAAAA=</HashCode>
+      <FileName>Chapter7\Observer\Chain\IChainEventPublisher.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

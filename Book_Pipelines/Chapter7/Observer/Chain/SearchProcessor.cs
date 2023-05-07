@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
+namespace Book_Pipelines.Chapter7.Chain_Of_Responsibility.Observer
 {
     public class SearchProcessor : Processor
     {
@@ -20,7 +20,8 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
             var uploadData = request as IUploadEventData;
             if (uploadData == null)
                 throw new ArgumentException(nameof(request));
-            RegisterStep(request, "EVENT_SEARCH");
+            // RegisterStep(request, "EVENT_SEARCH");
+            Notify(request, "EVENT_SEARCH");
             TargetSystemSearchApiClient.ExecuteRequest(uploadData.FileName);
 
             base.Process(request);

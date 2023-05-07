@@ -1,10 +1,11 @@
 ﻿using Book_Pipelines.Chapter7.Observer;
+using Book_Pipelines.Chapter7.Observer.Chain;
 using Book_Pipelines.Chapter7.Observer.Exceptions;
 using Book_Pipelines.Chapter7.Observer.Logging;
 
-namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
+namespace Book_Pipelines.Chapter7.Chain_Of_Responsibility.Observer
 {
-    public class ExceptionHandlingProcessor : Processor
+    public class ExceptionHandlingProcessor : Processor, IChainEventListener
     {
         public Logger LogginClient { get; set; }
 
@@ -14,7 +15,8 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
             var tmpProcess = nextProcessor;
             do
             {
-                tmpProcess.RegisterStepExecution += RegisterStepExecutionHandler;
+                tmpProcess.Subscribe(this);
+                //tmpProcess.RegisterStepExecution += RegisterStepExecutionHandler;
                 tmpProcess = tmpProcess.NextProcessor;
             } while (tmpProcess.NextProcessor != null);
             
@@ -60,6 +62,11 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
             {
                 LogginClient.EndSession();
             }
+        }
+
+        public void Update(IBasicEvent basicEvent, string message)
+        {
+            RegisterStepExecutionHandler(basicEvent, message);
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Book_Pipelines.Chapter3.Prototype;
-using Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain;
+using Book_Pipelines.Chapter7.Chain_Of_Responsibility.Observer;
 using System.Diagnostics;
 using System.Reflection.Metadata.Ecma335;
 

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Book_Pipelines.Chapter7.Observer.Exceptions;
 
-namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
+namespace Book_Pipelines.Chapter7.Chain_Of_Responsibility.Observer
 {
     public class ValidateProcessor : Processor
     {
@@ -15,7 +15,8 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
         }
         public override void Process(IBasicEvent request)
         {
-            RegisterStep(request, "EVENT_VALIDATION");
+            // RegisterStep(request, "EVENT_VALIDATION");
+            Notify(request, "EVENT_VALIDATION");
 
             var basicEvent = request as IUploadEventData;
 

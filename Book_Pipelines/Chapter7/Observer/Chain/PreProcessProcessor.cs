@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
+namespace Book_Pipelines.Chapter7.Chain_Of_Responsibility.Observer
 {
     public class PreProcessProcessor : Processor
     {
@@ -18,7 +18,8 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
 
         public override void Process(IBasicEvent request)
         {
-            RegisterStep(request, "EVENT_PREPROCESSING");
+            //RegisterStep(request, "EVENT_PREPROCESSING");
+            Notify(request, "EVENT_PREPROCESSING");
             var uploadData = request as IUploadEventData;
             if (uploadData == null)
                 throw new ArgumentException(nameof(request));

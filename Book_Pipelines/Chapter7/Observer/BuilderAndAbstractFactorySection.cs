@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace Book_Pipelines.Chapter7.Observer
 {
-    public class CoRSection
+    public class ObserverSection
     {
         public static void Main()
         {

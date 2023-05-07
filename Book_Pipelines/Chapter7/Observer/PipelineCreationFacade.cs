@@ -1,4 +1,5 @@
-﻿using Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain;
+﻿
+using Book_Pipelines.Chapter7.Chain_Of_Responsibility.Observer;
 using Book_Pipelines.Chapter7.Observer.Logging;
 namespace Book_Pipelines.Chapter7.Observer
 {

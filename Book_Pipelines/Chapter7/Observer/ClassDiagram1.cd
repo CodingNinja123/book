@@ -1,88 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.ExceptionHandlingProcessor">
-    <Position X="0.5" Y="4" Width="1.5" />
+  <Class Name="Book_Pipelines.Chapter7.Chain_Of_Responsibility.Observer.ExceptionHandlingProcessor">
+    <Position X="4.5" Y="1" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAACAAAAAIAAAAAAA=</HashCode>
-      <FileName>Chapter6\Chain Of Responsibility\Chain\ExceptionHandlingProcessor.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAAAAAgAAAAAAAAAAACAAAAAIAAAAAAA=</HashCode>
+      <FileName>Chapter7\Observer\Chain\ExceptionHandlingProcessor.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.IoTProcessEventProcessor">
-    <Position X="7.25" Y="4" Width="1.5" />
+  <Class Name="Book_Pipelines.Chapter7.Chain_Of_Responsibility.Observer.Processor">
+    <Position X="8" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter6\Chain Of Responsibility\Chain\IoTProcessEventProcessor.cs</FileName>
+      <HashCode>BAAAAAAAAAAAAAAAAgAAAAAAAoACAAJAQAAAAAAAACA=</HashCode>
+      <FileName>Chapter7\Observer\Chain\Processor.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.IoTValidateProcessor">
-    <Position X="11.75" Y="4" Width="1.5" />
+  <Interface Name="Book_Pipelines.Chapter7.Observer.Chain.IChainEventListener">
+    <Position X="5.75" Y="5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter6\Chain Of Responsibility\Chain\IoTValidateProcessor.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter7\Observer\Chain\IChainEventListener.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.PreProcessProcessor">
-    <Position X="16.25" Y="4" Width="1.5" />
+  </Interface>
+  <Interface Name="Book_Pipelines.Chapter7.Observer.Chain.IChainEventPublisher">
+    <Position X="8" Y="5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter6\Chain Of Responsibility\Chain\PreProcessProcessor.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAABAQAAAAAAAAAA=</HashCode>
+      <FileName>Chapter7\Observer\Chain\IChainEventPublisher.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.ProcessEventProcessor">
-    <Position X="2.75" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
-      <FileName>Chapter6\Chain Of Responsibility\Chain\ProcessEventProcessor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.Processor">
-    <Position X="10.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>BAAAAAAAAAAAAAAAAgAAAAAAAgAAAAAAAAAAAAAAACA=</HashCode>
-      <FileName>Chapter6\Chain Of Responsibility\Chain\Processor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.SaveMetadataProcessor">
-    <Position X="18.5" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter6\Chain Of Responsibility\Chain\SaveMetadataProcessor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.SearchProcessor">
-    <Position X="5" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter6\Chain Of Responsibility\Chain\SearchProcessor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.StoreProcessor">
-    <Position X="9.5" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>Chapter6\Chain Of Responsibility\Chain\StoreProcessor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.UpdateMetadataProcessor">
-    <Position X="14" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter6\Chain Of Responsibility\Chain\UpdateMetadataProcessor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.ValidateProcessor">
-    <Position X="20.75" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter6\Chain Of Responsibility\Chain\ValidateProcessor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Delegate Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.RegisterStepExecutionDelegate">
-    <Position X="12" Y="5.75" Width="3.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
-      <FileName>Chapter6\Chain Of Responsibility\Chain\Processor.cs</FileName>
-    </TypeIdentifier>
-  </Delegate>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
