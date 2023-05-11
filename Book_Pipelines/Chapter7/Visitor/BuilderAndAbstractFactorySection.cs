@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace Book_Pipelines.Chapter7.Visitor
 {
-    public class ObserverSection
+    public class VisitorSection
     {
         public static void Main()
         {

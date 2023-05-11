@@ -2,16 +2,18 @@
 using Book_Pipelines.Chapter7.Visitor.Chain;
 using Book_Pipelines.Chapter7.Visitor.Exceptions;
 using Book_Pipelines.Chapter7.Visitor.Logging;
+using Microsoft.VisualBasic;
 
 namespace Book_Pipelines.Chapter7.Chain_Of_Responsibility.Visitor
 {
     public class ExceptionHandlingProcessor : Processor
     {
+        private ProcessorVisitor processorVisitorInstance;
         public string ExceptionHandlingMessage { get { return "some special ExceptionHandlingProccessor message"; } }
 
         public Logger LogginClient { get; set; }
-
-        public ExceptionHandlingProcessor(Processor nextProcessor, Logger loggingClient) : base(nextProcessor)
+        
+        public ExceptionHandlingProcessor(Processor nextProcessor, Logger loggingClient, ProcessorVisitor processorVisitorInstance) : base(nextProcessor)
         {
             this.RegisterStepExecution += RegisterStepExecutionHandler;
             var tmpProcess = nextProcessor;
@@ -23,11 +25,17 @@ namespace Book_Pipelines.Chapter7.Chain_Of_Responsibility.Visitor
             
             this.LogginClient = loggingClient;
             this.LogginClient.StartSession(Guid.NewGuid());
+            this.processorVisitorInstance = processorVisitorInstance;
         }
 
         protected void RegisterStepExecutionHandler(IBasicEvent basicEvent, string step)
         {
             var message = $"Executing step: {step} for event: {basicEvent.Id}-{basicEvent.Source}-{basicEvent.Type}";
+            LogginClient.Log(message);
+        }
+        private void LogStatistic()
+        {
+            string message = string.Join(Environment.NewLine, processorVisitorInstance.Data);
             LogginClient.Log(message);
         }
 
@@ -43,6 +51,8 @@ namespace Book_Pipelines.Chapter7.Chain_Of_Responsibility.Visitor
             {
                 RegisterStep(basicEvent, "PROCESSING_STARTED");
                 base.Process(basicEvent);
+                Accept(processorVisitorInstance);
+                LogStatistic();
                 RegisterStep(basicEvent, "PROCESSING_FINISHED");
             }
             catch (gRpcCommunicationException)

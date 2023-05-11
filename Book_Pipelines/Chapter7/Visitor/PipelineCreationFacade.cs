@@ -20,7 +20,7 @@ namespace Book_Pipelines.Chapter7.Visitor
                                     storeApiClient),
                                 fileUploadClient),
                             searchApiClient),
-                        fileDownloadClient))), GetFileLogger());
+                        fileDownloadClient))), GetFileLogger(), new Chain.ProcessorVisitor());
             return proc;
         }
         public static Processor BuildFileUploadPipelineB(ICommunicationClient<UploadFileInfo, int> fileUploadClient,
@@ -36,7 +36,7 @@ namespace Book_Pipelines.Chapter7.Visitor
                         new ProcessEventProcessor(
                             null, fileUploadClient),
                         searchApiClient),
-                    fileDownloadClient)), GetFileLogger());
+                    fileDownloadClient)), GetFileLogger(), new Chain.ProcessorVisitor());
 
             return proc;
         }
@@ -48,7 +48,7 @@ namespace Book_Pipelines.Chapter7.Visitor
                 new IoTValidateProcessor(
                     new IoTProcessEventProcessor(
                         new UpdateMetadataProcessor(null),
-                apiClient))), GetFileLogger());
+                apiClient))), GetFileLogger(), new Chain.ProcessorVisitor());
 
             return processor;
         }

@@ -12,7 +12,6 @@ namespace Book_Pipelines.Chapter7.Chain_Of_Responsibility.Visitor
     public class IoTValidateProcessor : Processor
     {
         public string IoTValidateMessage { get { return "some special IoTValidateProccessor message"; } }
-
         public IoTValidateProcessor(Processor nextProcessor) : base(nextProcessor)
         {
         }
@@ -21,7 +20,6 @@ namespace Book_Pipelines.Chapter7.Chain_Of_Responsibility.Visitor
             visitor.Visit(this);
             base.Accept(visitor);
         }
-
         public override void Process(IBasicEvent request)
         {
             RegisterStep(request, "EVENT_VALIDATION");
