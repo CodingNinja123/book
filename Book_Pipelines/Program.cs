@@ -17,6 +17,7 @@ using Book_Pipelines.Chapter5.TemplateMethod;
 using Book_Pipelines.Chapter6.ChainOfResponsibility;
 using Book_Pipelines.Chapter6.Strategy;
 using Book_Pipelines.Chapter7.Observer;
+using Book_Pipelines.Chapter7.State;
 using Book_Pipelines.Chapter7.Visitor;
 using System.Runtime.CompilerServices;
 
@@ -24,4 +25,4 @@ using System.Runtime.CompilerServices;
 // Chapter2Main.Main();
 // BuilderAndAbstractFactorySection.Main();
 
-VisitorSection.Main();
+StateSection.Main();

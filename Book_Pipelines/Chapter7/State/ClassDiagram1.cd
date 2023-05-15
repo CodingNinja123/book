@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Book_Pipelines.Chapter7.State.State">
+    <Position X="9.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAABAAACAAAAAAAAQAAAQAAAAAAAAA=</HashCode>
+      <FileName>Chapter7\State\AbstractState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter7.State.AudioPlayer">
+    <Position X="6" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAADgAABABAAAAAAAAAAQAkIQAAAAAAAAA=</HashCode>
+      <FileName>Chapter7\State\AudioPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter7.State.OnOffState">
+    <Position X="7.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Chapter7\State\LockedState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter7.State.PlayingState">
+    <Position X="12" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAABAAAAAAAAAAAAQAAAQAAAAAAAAA=</HashCode>
+      <FileName>Chapter7\State\PlayingState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter7.State.ReadyState">
+    <Position X="9.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAABAAAAAAAAAAAAQAAAQAAAAAAAAA=</HashCode>
+      <FileName>Chapter7\State\ReadyState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
