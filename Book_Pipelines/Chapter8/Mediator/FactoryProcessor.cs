@@ -1,46 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Book_Pipelines.Chapter8.Mediator
+﻿namespace Book_Pipelines.Chapter8.Mediator
 {
     public static class FactoryCreator
     {
-        private static AbstractFactory<IIoTEventData> iotFactory;
-        private static AbstractFactory<IUploadEventData> fileUploadFactory;
+        static ProcessorMediator mediator = new ProcessorMediator();
 
         static FactoryCreator()
         {
-            iotFactory = new IoTFactory();
-            fileUploadFactory = new FileUploadFactory();    
+            mediator.AddProcessor("TypeA", PipelineDirector.BuildTypeAPipeline());
+            mediator.AddProcessor("TypeB", PipelineDirector.BuildTypeBPipeline());
+            mediator.AddProcessor("TypeC", PipelineDirector.BuildTypeCPipeline());
+            mediator.AddProcessor("TypeR", PipelineDirector.BuildTypeRPipeline(mediator));
         }
 
         public static void Execute(BasicEvent basicEvent)
         {
-            switch (basicEvent.Source)
-            {
-                case "IOT":
-                    {
-                        iotFactory.GetPipeline(basicEvent).Process(basicEvent as BaseIoTEvent);
-                        break;
-                    }
-                case ("FILE"):
-                    {
-                        fileUploadFactory.GetPipeline(basicEvent).Process(basicEvent as IUploadEventData);   
-                        break;
-                    }
-                case ("REPORT"):
-                    {
-                        fileUploadFactory.GetPipeline(basicEvent).Process(basicEvent as IUploadEventData);
-                        iotFactory.GetPipeline(basicEvent).Process(basicEvent as IIoTEventData);
-                        break;
-                    }
-                default:
-                    throw new NotImplementedException($"Scenario for {basicEvent.Source} is not implemented");
-            }
+            mediator.ProcessEvent(basicEvent);
         }
     }
 }

@@ -19,10 +19,11 @@ using Book_Pipelines.Chapter6.Strategy;
 using Book_Pipelines.Chapter7.Observer;
 using Book_Pipelines.Chapter7.State;
 using Book_Pipelines.Chapter7.Visitor;
+using Book_Pipelines.Chapter8.Mediator;
 using System.Runtime.CompilerServices;
 
 //InheritanceModule.Main();
 // Chapter2Main.Main();
 // BuilderAndAbstractFactorySection.Main();
 
-StateSection.Main();
+MediatorSection.Main();

@@ -21,6 +21,17 @@ namespace Book_Pipelines.Chapter8.Mediator
             this.Value = value;
         }
 
+        public ReportEvent (ReportEvent reportEvent)
+        {
+            Id = reportEvent.Id;
+            Action = reportEvent.Action;
+            FileName = reportEvent.FileName;
+            FileType = reportEvent.FileType;
+            FileUrl = reportEvent.FileUrl;
+            Source = reportEvent.Source;
+            Value = reportEvent.Value;
+        }
+
         public string FileName { get ; set ; }
         public string FileUrl { get ; set ; }
         public string FileType { get; set; }

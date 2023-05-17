@@ -28,5 +28,9 @@ namespace Book_Pipelines.Chapter8.Mediator
         {
             return PipelineCreationFacade.BuildIoTPipeline(systemCApiClient);
         }
+        public static Processor BuildTypeRPipeline(ProcessorMediator mediator)
+        {
+            return PipelineCreationFacade.BuildReportPipeline(mediator);
+        }
     }
 }

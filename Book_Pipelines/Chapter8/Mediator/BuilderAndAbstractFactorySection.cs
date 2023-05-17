@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace Book_Pipelines.Chapter8.Mediator
 {
-    public class VisitorSection
+    public class MediatorSection
     {
         public static void Main()
         {

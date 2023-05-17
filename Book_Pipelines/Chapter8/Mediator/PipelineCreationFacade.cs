@@ -1,5 +1,6 @@
 ﻿
 using Book_Pipelines.Chapter8.Chain_Of_Responsibility.Mediator;
+using Book_Pipelines.Chapter8.Mediator.Chain;
 using Book_Pipelines.Chapter8.Mediator.Logging;
 namespace Book_Pipelines.Chapter8.Mediator
 {
@@ -10,7 +11,7 @@ namespace Book_Pipelines.Chapter8.Mediator
             ICommunicationClient<string, string> storeApiClient
             )
         {
-            Processor proc = new ExceptionHandlingProcessor(new SaveMetadataProcessor(
+            Processor proc = new SelectionProcessor(new ExceptionHandlingProcessor(new SaveMetadataProcessor(
                 new ValidateProcessor(
                     new PreProcessProcessor(
                         new SearchProcessor(
@@ -20,7 +21,7 @@ namespace Book_Pipelines.Chapter8.Mediator
                                     storeApiClient),
                                 fileUploadClient),
                             searchApiClient),
-                        fileDownloadClient))), GetFileLogger(), new Chain.ProcessorVisitor());
+                        fileDownloadClient))), GetFileLogger(), new Chain.ProcessorVisitor()), "TypeA");
             return proc;
         }
         public static Processor BuildFileUploadPipelineB(ICommunicationClient<UploadFileInfo, int> fileUploadClient,
@@ -28,15 +29,13 @@ namespace Book_Pipelines.Chapter8.Mediator
             ICommunicationClient<string, string> storeApiClient
             )
         {
-            var theLast = new ProcessEventProcessor(
-                            null, fileUploadClient);
-            Processor proc = new ExceptionHandlingProcessor(new ValidateProcessor(
+            Processor proc = new SelectionProcessor(new ExceptionHandlingProcessor(new ValidateProcessor(
                 new PreProcessProcessor(
                     new SearchProcessor(
                         new ProcessEventProcessor(
                             null, fileUploadClient),
                         searchApiClient),
-                    fileDownloadClient)), GetFileLogger(), new Chain.ProcessorVisitor());
+                    fileDownloadClient)), GetFileLogger(), new Chain.ProcessorVisitor()), "TypeB");
 
             return proc;
         }
@@ -44,14 +43,25 @@ namespace Book_Pipelines.Chapter8.Mediator
 
         public static Processor BuildIoTPipeline(ICommunicationClient<IoTData, string> apiClient)
         {
-            Processor processor = new ExceptionHandlingProcessor(new SaveMetadataProcessor(
+            Processor processor = new SelectionProcessor(new ExceptionHandlingProcessor(new SaveMetadataProcessor(
                 new IoTValidateProcessor(
                     new IoTProcessEventProcessor(
                         new UpdateMetadataProcessor(null),
-                apiClient))), GetFileLogger(), new Chain.ProcessorVisitor());
+                apiClient))), GetFileLogger(), new Chain.ProcessorVisitor()), "TypeC");
 
             return processor;
         }
+
+        public static Processor BuildReportPipeline(ProcessorMediator mediator)
+        {
+            Processor processor = new SelectionProcessor(
+                new ExceptionHandlingProcessor(
+                    new EmitterProcessor(null,mediator), 
+                GetFileLogger(), new Chain.ProcessorVisitor()), "TypeR");
+
+            return processor;
+        }
+
 
         private static Logger GetFileLogger()
         {

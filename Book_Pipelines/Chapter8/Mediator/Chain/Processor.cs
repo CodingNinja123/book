@@ -14,7 +14,7 @@ namespace Book_Pipelines.Chapter8.Chain_Of_Responsibility.Mediator
     {
         private Processor nextProcessor;
         public Processor NextProcessor { get => nextProcessor; }
-        
+
         public event RegisterStepExecutionDelegate RegisterStepExecution;
 
         public Processor(Processor nextProcessor)

@@ -21,10 +21,9 @@ namespace Book_Pipelines.Chapter8.Chain_Of_Responsibility.Mediator
             {
                 tmpProcess.RegisterStepExecution += RegisterStepExecutionHandler;
                 tmpProcess = tmpProcess.NextProcessor;
-            } while (tmpProcess.NextProcessor != null);
+            } while (tmpProcess != null);
             
             this.LogginClient = loggingClient;
-            this.LogginClient.StartSession(Guid.NewGuid());
             this.processorVisitorInstance = processorVisitorInstance;
         }
 
@@ -47,6 +46,8 @@ namespace Book_Pipelines.Chapter8.Chain_Of_Responsibility.Mediator
 
         public override void Process(IBasicEvent basicEvent)
         {
+            this.LogginClient.StartSession(Guid.NewGuid());
+
             try
             {
                 RegisterStep(basicEvent, "PROCESSING_STARTED");
