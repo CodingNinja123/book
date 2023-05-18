@@ -1,10 +1,10 @@
 ﻿namespace Book_Pipelines.Chapter8.Mediator
 {
-    public static class FactoryCreator
+    public static class FactoryProcessor
     {
         static ProcessorMediator mediator = new ProcessorMediator();
 
-        static FactoryCreator()
+        static FactoryProcessor()
         {
             mediator.AddProcessor("TypeA", PipelineDirector.BuildTypeAPipeline());
             mediator.AddProcessor("TypeB", PipelineDirector.BuildTypeBPipeline());

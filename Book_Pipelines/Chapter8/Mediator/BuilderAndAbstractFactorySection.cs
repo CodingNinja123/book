@@ -29,7 +29,7 @@ namespace Book_Pipelines.Chapter8.Mediator
             List<BasicEvent> eventList = new List<BasicEvent> { event1, event2, event3, event4, event5, event6, reportEvent };
             eventList.ForEach(eventObj =>
             {
-                FactoryCreator.Execute(eventObj);
+                FactoryProcessor.Execute(eventObj);
                 Console.WriteLine();
             });
 

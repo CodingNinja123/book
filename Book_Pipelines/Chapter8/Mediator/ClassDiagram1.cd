@@ -1,31 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Book_Pipelines.Chapter7.Chain_Of_Responsibility.Visitor.Processor">
-    <Position X="3.5" Y="1.75" Width="2.5" />
+  <Class Name="Book_Pipelines.Chapter8.Mediator.Chain.EmitterProcessor">
+    <Position X="6" Y="7.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>BIAAAAAAAAAAAAAAAgAAAAAAAgAAAAIAAAAAAAAAACA=</HashCode>
-      <FileName>Chapter7\Visitor\Chain\Processor.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter8\Mediator\Chain\EmitterProcessor.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Book_Pipelines.Chapter8.Mediator.Chain.ProcessorVisitor">
-    <Position X="6.75" Y="3" Width="2" />
+  <Class Name="Book_Pipelines.Chapter8.Mediator.ProcessorMediator">
+    <Position X="3.25" Y="5.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter7\Visitor\Chain\ProcessorVisitor.cs</FileName>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAIAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter8\Mediator\ProcessorMediator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Book_Pipelines.Chapter7.Chain_Of_Responsibility.Visitor.ExceptionHandlingProcessor">
-    <Position X="2" Y="5.75" Width="2.5" />
+  <Class Name="Book_Pipelines.Chapter8.Mediator.PipelineCreationFacade">
+    <Position X="7" Y="5.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AIAhAAAAAAAAAAAAAgAAAAAAAAAAACAAAAAIAAAAQAA=</HashCode>
-      <FileName>Chapter7\Visitor\Chain\ExceptionHandlingProcessor.cs</FileName>
+      <HashCode>AACAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Chapter8\Mediator\PipelineCreationFacade.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Book_Pipelines.Chapter7.Chain_Of_Responsibility.Visitor.IoTValidateProcessor">
-    <Position X="5" Y="5.75" Width="2.25" />
+  <Class Name="Book_Pipelines.Chapter8.Mediator.FactoryProcessor">
+    <Position X="2.75" Y="7.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AIAAAAAAAAAAAAAAAgAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter7\Visitor\Chain\IoTValidateProcessor.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter8\Mediator\FactoryProcessor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -11,7 +11,7 @@ namespace Book_Pipelines.Chapter8.Mediator
             ICommunicationClient<string, string> storeApiClient
             )
         {
-            Processor proc = new SelectionProcessor(new ExceptionHandlingProcessor(new SaveMetadataProcessor(
+            Processor proc = new ExceptionHandlingProcessor(new SaveMetadataProcessor(
                 new ValidateProcessor(
                     new PreProcessProcessor(
                         new SearchProcessor(
@@ -21,7 +21,7 @@ namespace Book_Pipelines.Chapter8.Mediator
                                     storeApiClient),
                                 fileUploadClient),
                             searchApiClient),
-                        fileDownloadClient))), GetFileLogger(), new Chain.ProcessorVisitor()), "TypeA");
+                        fileDownloadClient))), GetFileLogger(), new Chain.ProcessorVisitor());
             return proc;
         }
         public static Processor BuildFileUploadPipelineB(ICommunicationClient<UploadFileInfo, int> fileUploadClient,
@@ -29,13 +29,13 @@ namespace Book_Pipelines.Chapter8.Mediator
             ICommunicationClient<string, string> storeApiClient
             )
         {
-            Processor proc = new SelectionProcessor(new ExceptionHandlingProcessor(new ValidateProcessor(
+            Processor proc = new ExceptionHandlingProcessor(new ValidateProcessor(
                 new PreProcessProcessor(
                     new SearchProcessor(
                         new ProcessEventProcessor(
                             null, fileUploadClient),
                         searchApiClient),
-                    fileDownloadClient)), GetFileLogger(), new Chain.ProcessorVisitor()), "TypeB");
+                    fileDownloadClient)), GetFileLogger(), new Chain.ProcessorVisitor());
 
             return proc;
         }
@@ -43,21 +43,21 @@ namespace Book_Pipelines.Chapter8.Mediator
 
         public static Processor BuildIoTPipeline(ICommunicationClient<IoTData, string> apiClient)
         {
-            Processor processor = new SelectionProcessor(new ExceptionHandlingProcessor(new SaveMetadataProcessor(
+            Processor processor = new ExceptionHandlingProcessor(new SaveMetadataProcessor(
                 new IoTValidateProcessor(
                     new IoTProcessEventProcessor(
                         new UpdateMetadataProcessor(null),
-                apiClient))), GetFileLogger(), new Chain.ProcessorVisitor()), "TypeC");
+                apiClient))), GetFileLogger(), new Chain.ProcessorVisitor());
 
             return processor;
         }
 
         public static Processor BuildReportPipeline(ProcessorMediator mediator)
         {
-            Processor processor = new SelectionProcessor(
+            Processor processor = 
                 new ExceptionHandlingProcessor(
                     new EmitterProcessor(null,mediator), 
-                GetFileLogger(), new Chain.ProcessorVisitor()), "TypeR");
+                GetFileLogger(), new Chain.ProcessorVisitor());
 
             return processor;
         }
