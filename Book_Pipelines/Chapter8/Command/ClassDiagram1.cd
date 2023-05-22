@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Book_Pipelines.Chapter8.Command.CommandExecutor">
+    <Position X="5.5" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter8\Command\CommandExecutor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter8.Command.FileUploadCommand">
+    <Position X="1.25" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Chapter8\Command\FileUploadCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter8.Command.IoTCommand">
+    <Position X="3.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Chapter8\Command\IoTCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter8.Command.ReportCommand">
+    <Position X="1.25" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAIEAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter8\Command\ReportCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter8.Command.CommandInvoker">
+    <Position X="5.5" Y="7.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Chapter8\Command\CommandInvoker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Book_Pipelines.Chapter8.Command.ICommand">
+    <Position X="3.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter8\Command\ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
