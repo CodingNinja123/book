@@ -21,10 +21,12 @@ using Book_Pipelines.Chapter7.State;
 using Book_Pipelines.Chapter7.Visitor;
 using Book_Pipelines.Chapter8.Command;
 using Book_Pipelines.Chapter8.Mediator;
+using Book_Pipelines.Chapter9.Interpreter;
+using Book_Pipelines.Chapter9.Iterator;
 using System.Runtime.CompilerServices;
 
 //InheritanceModule.Main();
 // Chapter2Main.Main();
 // BuilderAndAbstractFactorySection.Main();
 
-CommandSection.Main();
+IteratorSection.Main();
