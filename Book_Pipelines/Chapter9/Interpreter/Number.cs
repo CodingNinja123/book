@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Book_Pipelines.Chapter9.Interpreter
 {
-    public class Number : IExpression
+    public class NumberExpression : IExpression
     {
         private int number;
 
-        public Number(int number)
+        public NumberExpression(int number)
         {
             this.number = number;
         }

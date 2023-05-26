@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Book_Pipelines.Chapter9.Memento.Manager">
+    <Position X="9" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAQAAAAAAAACAAIAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Chapter9\Memento\Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter9.Memento.ConcreteMemento">
+    <Position X="7" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter9\Memento\ConcreteMemento.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter9.Memento.ConcreteWorker">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABMAAAAAAAAAAAAAACAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter9\Memento\ConcreteWorker.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Book_Pipelines.Chapter9.Memento.IMemento">
+    <Position X="7" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter9\Memento\IMemento.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Book_Pipelines.Chapter9.Memento.IWorker">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter9\Memento\IWorker.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

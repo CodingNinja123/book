@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Book_Pipelines.Chapter9.Interpreter
 {
-    public class Minus : IExpression
+    public class MinusOperator : IExpression
     {
-        IExpression leftExpression;
-        IExpression rightExpression;
+        private IExpression leftExpression;
+        private IExpression rightExpression;
 
-        public Minus(IExpression leftExpression, IExpression rightExpression)
+        public MinusOperator(IExpression leftExpression, IExpression rightExpression)
         {
             this.leftExpression = leftExpression;
             this.rightExpression = rightExpression;

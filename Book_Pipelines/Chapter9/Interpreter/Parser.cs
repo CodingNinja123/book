@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Book_Pipelines.Chapter9.Interpreter
 {
-    public class Parser
+    public class ExpressionParser
     {
         public IExpression Parse(string expression)
         {
@@ -19,28 +19,22 @@ namespace Book_Pipelines.Chapter9.Interpreter
                 switch (tokens[i])
                 {
                     case "+":
-                        // it's an addition, pop two elements from the stack, perform the addition, push result back
                         IExpression rightPlus = stack.Pop();
                         IExpression leftPlus = stack.Pop();
-                        IExpression plus = new Plus(leftPlus, rightPlus);
+                        IExpression plus = new PlusOperator(leftPlus, rightPlus);
                         stack.Push(plus);
                         break;
-
                     case "-":
-                        // it's a subtraction, pop two elements from the stack, perform the subtraction, push result back
                         IExpression rightMinus = stack.Pop();
                         IExpression leftMinus = stack.Pop();
-                        IExpression minus = new Minus(leftMinus, rightMinus);
+                        IExpression minus = new MinusOperator(leftMinus, rightMinus);
                         stack.Push(minus);
                         break;
-
                     default:
-                        // it's a number, push it to the stack
-                        stack.Push(new Number(int.Parse(tokens[i])));
+                        stack.Push(new NumberExpression(int.Parse(tokens[i])));
                         break;
                 }
             }
-
             return stack.Pop();
         }
     }

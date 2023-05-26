@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Book_Pipelines.Chapter9.Interpreter.Parser">
-    <Position X="4" Y="5" Width="1.5" />
+  <Class Name="Book_Pipelines.Chapter9.Interpreter.ExpressionParser">
+    <Position X="4" Y="5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter9\Interpreter\Parser.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Book_Pipelines.Chapter9.Interpreter.Minus">
+  <Class Name="Book_Pipelines.Chapter9.Interpreter.MinusOperator">
     <Position X="2" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAIAAAAgAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
@@ -15,16 +15,16 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Book_Pipelines.Chapter9.Interpreter.Plus">
-    <Position X="6" Y="2.75" Width="1.5" />
+  <Class Name="Book_Pipelines.Chapter9.Interpreter.PlusOperator">
+    <Position X="6.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAIAAAAgAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter9\Interpreter\PlusOperator.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Book_Pipelines.Chapter9.Interpreter.Number">
-    <Position X="4" Y="2.75" Width="1.5" />
+  <Class Name="Book_Pipelines.Chapter9.Interpreter.NumberExpression">
+    <Position X="4" Y="2.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter9\Interpreter\Number.cs</FileName>
@@ -32,7 +32,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Book_Pipelines.Chapter9.Interpreter.IExpression">
-    <Position X="4" Y="1.25" Width="1.5" />
+    <Position X="4" Y="1.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter9\Interpreter\IExpression.cs</FileName>
