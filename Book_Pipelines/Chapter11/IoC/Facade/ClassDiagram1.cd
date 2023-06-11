@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.AbstractFactory" Collapsed="true">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\AbstractFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.AbstractPipeline" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\AbstractPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.ExceptionHandlingPipeline" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAgAAEAAAAAAAACAgAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\ExceptionHandlingPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.ExceptionHandlingPipelineBuilder&lt;T&gt;" Collapsed="true">
+    <Position X="11" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAIAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\ExceptionHandlingPipelineBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.FactoryCreator" Collapsed="true">
+    <Position X="11.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAEAAAAAAAIAABAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\FactoryCretator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.FileUploadFactory" Collapsed="true">
+    <Position X="4" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\FileFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.FilePipelineBuilder&lt;T&gt;" Collapsed="true">
+    <Position X="8.25" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAEgAAAAMAQAAAAAABgQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\FilePipelineBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.FileUploadPipeline" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAEMAAIAACAAAAgAgEAAAAAAAABAQAAQAAAAQAgAAE=</HashCode>
+      <FileName>Chapter11\IoC\Facade\FileUploadPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.IoTFactory" Collapsed="true">
+    <Position X="6.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\IoTFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.IoTPipeline" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAEIAAAAACAAAAAAgEAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\IoTPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.IoTPipelineBuilder&lt;T&gt;" Collapsed="true">
+    <Position X="14.25" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAEBAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\IoTPipelineBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.PipelineCreationFacade" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAAIAAEAUAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\PipelineCreationFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.PipelineDirector" Collapsed="true">
+    <Position X="11.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAABAAAAAAACgAAjgQAAAAAAIAAAAAAAQAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\PipelineDirector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.ReportFactory" Collapsed="true">
+    <Position X="1.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\ReportFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.ReportPipeline" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\ReportPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.SystemCApiClient" Collapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\SystemCApiClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.SystemAApiClient" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\SystemAApiClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.FileDownloadClient" Collapsed="true">
+    <Position X="13" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\FileDownloadClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.FileUploadClient" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\FileUploadClients.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Book_Pipelines.Chapter11.IoC.Facade.DashboardNotificationClient" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\DashboardCommunicationClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Book_Pipelines.Chapter11.IoC.Facade.ICommunicationClient&lt;TRequest, TResponse&gt;" Collapsed="true">
+    <Position X="12" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Chapter11\IoC\Facade\ICommunicationClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
