@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Book_Pipelines.Chapter11.IoC.Facade
+﻿namespace Book_Pipelines.Chapter11.IoC.Facade
 {
-    public class FileUploadFactory: AbstractFactory
+    public class FileUploadFactory: IFileUploadFactory
     {
-        public override AbstractPipeline GetPipeline(BasicEvent basicEvent)
+        private readonly IPipelineDirector director;
+
+        public FileUploadFactory(IPipelineDirector director)
+        {
+            this.director = director;
+        }
+        public AbstractPipeline GetPipeline(BasicEvent basicEvent)
         {
             return basicEvent.Type switch
             {
-                "TypeA" => PipelineDirector.BuildTypeAPipeline(),
-                "TypeB" => PipelineDirector.BuildTypeBPipeline(),
+                "TypeA" => director.BuildTypeAPipeline(),
+                "TypeB" => director.BuildTypeBPipeline(),
                 _ => throw new NotImplementedException()
             };
         }

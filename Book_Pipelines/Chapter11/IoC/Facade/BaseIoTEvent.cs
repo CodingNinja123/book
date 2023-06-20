@@ -11,10 +11,4 @@ namespace Book_Pipelines.Chapter11.IoC.Facade
         public string Action { get; set; }
         public string Value { get; set; }
     }
-
-    public class CopyOfBaseIoTEvent : BasicEvent, IIoTEventData
-    {
-        public string Action { get; set; }
-        public string Value { get; set; }
-    }
 }

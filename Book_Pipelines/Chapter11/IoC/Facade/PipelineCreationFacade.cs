@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Book_Pipelines.Chapter11.IoC.Facade
+﻿namespace Book_Pipelines.Chapter11.IoC.Facade
 {
-    public static class PipelineCreationFacade
+    public class PipelineCreationFacade: IPipelineCreationFacade
     {
-        private static Configuration config = Configuration.Instance;
-        private static DashboardNotificationClient notificationClient = new DashboardNotificationClient(config.DashboardLoggingUrl);
-        public static AbstractPipeline BuildFileUploadPipeline(bool shouldBeFileProcessed, bool shouldEventBeStored, bool shouldSaveMetadata,
-            ICommunicationClient<UploadFileInfo, int> fileUploadClient, ICommunicationClient<string, byte[]> fileDownloadClient,
-            ICommunicationClient<string, string> searchApiClient, ICommunicationClient<string, string> storeApiClient
+        private IDashboardNotificationClient notificationClient;
+        public PipelineCreationFacade(IDashboardNotificationClient notificationClient)
+        {
+            this.notificationClient = notificationClient;
+        }
+
+        public AbstractPipeline BuildFileUploadPipeline(bool shouldBeFileProcessed, bool shouldEventBeStored, bool shouldSaveMetadata,
+            IFileUploadClient fileUploadClient, IFileDownloadClient fileDownloadClient,
+            ISystemASearchApiClient searchApiClient, ISystemAStoreApiClient storeApiClient
             )
         {
             var typeAPipelineBuilder = new FilePipelineBuilder<FileUploadPipeline>();
@@ -26,7 +24,7 @@ namespace Book_Pipelines.Chapter11.IoC.Facade
                 SetStoreApiClient(storeApiClient).
                 Build());
         }
-        public static AbstractPipeline BuildIoTPipeline(bool shouldSaveMetadata, ICommunicationClient<IoTData, string> apiClient)
+        public AbstractPipeline BuildIoTPipeline(bool shouldSaveMetadata, ISystemCAPIClient apiClient)
         {
             var typeCPipelineBuilder = new IoTPipelineBuilder<IoTPipeline>();
             return BuildExceptionHandlingPipeline(typeCPipelineBuilder.
@@ -34,16 +32,16 @@ namespace Book_Pipelines.Chapter11.IoC.Facade
                 SetTargetApiClient(apiClient).
                 Build());
         }
-        public static AbstractPipeline BuildReportPipeline(bool shouldBeFileProcessed, bool shouldEventBeStored, bool shouldSaveMetadata,
-            ICommunicationClient<UploadFileInfo, int> fileUploadClient, ICommunicationClient<string, byte[]> fileDownloadClient, 
-            ICommunicationClient<string, string> searchApiClient, ICommunicationClient<string, string> storeApiClient,
-            bool shouldSaveIoTMetadata, ICommunicationClient<IoTData, string> apiClient)
+        public AbstractPipeline BuildReportPipeline(bool shouldBeFileProcessed, bool shouldEventBeStored, bool shouldSaveMetadata,
+            IFileUploadClient fileUploadClient, IFileDownloadClient fileDownloadClient, 
+            ISystemASearchApiClient searchApiClient, ISystemAStoreApiClient storeApiClient,
+            bool shouldSaveIoTMetadata, ISystemCAPIClient apiClient)
         {
             return new ReportPipeline(new List<AbstractPipeline> { 
                 BuildFileUploadPipeline(shouldBeFileProcessed, shouldEventBeStored, shouldSaveMetadata, fileUploadClient,
                 fileDownloadClient, searchApiClient, storeApiClient), BuildIoTPipeline(shouldSaveIoTMetadata, apiClient) });
         }
-        private static AbstractPipeline BuildExceptionHandlingPipeline(AbstractPipeline internalPipeline)
+        private AbstractPipeline BuildExceptionHandlingPipeline(AbstractPipeline internalPipeline)
         {
             var exceptionPipelineBuilder = new ExceptionHandlingPipelineBuilder<ExceptionHandlingPipeline>();
             return exceptionPipelineBuilder.

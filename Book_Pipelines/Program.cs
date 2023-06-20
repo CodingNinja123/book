@@ -6,6 +6,7 @@ using Book_Pipelines.Chapter_2;
 using Book_Pipelines.Chapter_2.BuilderAbstractFactory;
 using Book_Pipelines.Chapter_2.Factory;
 using Book_Pipelines.Chapter11.IoC.Example;
+using Book_Pipelines.Chapter11.IoC.Facade;
 using Book_Pipelines.Chapter3.Prototype;
 using Book_Pipelines.Chapter4.Adapter;
 using Book_Pipelines.Chapter4.Composite;
@@ -31,4 +32,4 @@ using System.Runtime.CompilerServices;
 // Chapter2Main.Main();
 // BuilderAndAbstractFactorySection.Main();
 
-IoCSimpleExampleMain.Main();
+FacadeIoCSection.Main();

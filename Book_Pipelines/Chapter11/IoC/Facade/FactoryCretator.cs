@@ -1,18 +1,18 @@
 ﻿namespace Book_Pipelines.Chapter11.IoC.Facade
 {
-    public static class FactoryCreator
+    public class FactoryCreator: IFactoryCreator
     {
-        private static AbstractFactory iotFactory;
-        private static AbstractFactory fileUploadFactory;
-        private static AbstractFactory reportFactory;
+        private IIoTFactory iotFactory;
+        private IFileUploadFactory fileUploadFactory;
+        private IReportFactory reportFactory;
 
-        static FactoryCreator()
+        public FactoryCreator(IIoTFactory iotFactory, IFileUploadFactory fileUploadFactory, IReportFactory reportFactory)
         {
-            iotFactory = new IoTFactory();
-            fileUploadFactory = new FileUploadFactory();    
-            reportFactory = new ReportFactory();    
+            this.iotFactory = iotFactory;
+            this.fileUploadFactory = fileUploadFactory;
+            this.reportFactory = reportFactory;  
         }
-        public static AbstractFactory GetPipelineFactory(BasicEvent basicEvent)
+        public IAbstractFactory GetPipelineFactory(BasicEvent basicEvent)
         {
             return basicEvent.Source switch
             {

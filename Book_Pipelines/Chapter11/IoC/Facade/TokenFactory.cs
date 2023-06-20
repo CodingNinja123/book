@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Book_Pipelines.Chapter11.IoC.Facade
 {
-    public static class TokenFactory
+    public class TokenFactory: ITokenFactory
     {
-        private static Dictionary<SystemType,Token> tokens = new Dictionary<SystemType,Token>();
+        private Dictionary<SystemType,Token> tokens = new Dictionary<SystemType,Token>();
 
-        public static Token GetToken(SystemType system)
+        public Token GetToken(SystemType system)
         {
             if(tokens.ContainsKey(system) && tokens[system].ExpiresAt > DateTime.Now.AddMinutes(1))
             {

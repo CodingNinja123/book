@@ -1,36 +1,51 @@
 ﻿using Book_Pipelines.Chapter3.Prototype;
+using Book_Pipelines.Chapter5.Bridge;
 using System.Diagnostics;
 using System.Reflection.Metadata.Ecma335;
 
 namespace Book_Pipelines.Chapter11.IoC.Facade
 {
-    public static class PipelineDirector
+    public class PipelineDirector: IPipelineDirector
     {
-        private static Configuration config = Configuration.Instance;
-        private static SystemAApiClient systemASearchClient = new (config.ASystemSearchApi);
-        private static SystemAApiClient systemAStoreClient = new (config.ASystemStoreApi);
-        private static FileUploadClient fileUploadAClient = new (config.ASystemUploadUrl);
-        private static FileUploadClient fileUploadBClient = new (config.BSystemUploadUrl);
-        private static FileDownloadClient fileDownloadClient = new ();
-        private static SystemCApiClient systemCApiClient = new (config.CSystemApi);
-        private static DashboardNotificationClient dashboardClient = new(config.DashboardLoggingUrl);
+        private ISystemASearchApiClient systemASearchClient;
+        private ISystemAStoreApiClient systemAStoreClient;
+        private IFileAUploadClient fileUploadAClient;
+        private IFileBUploadClient fileUploadBClient;
+        private IFileDownloadClient fileDownloadClient;
+        private ISystemCAPIClient systemCApiClient;
+        private IPipelineCreationFacade pipelineCreationFacade;
 
-        public static AbstractPipeline BuildTypeAPipeline()
+        public PipelineDirector(ISystemASearchApiClient systemASearchClient,
+            ISystemAStoreApiClient systemAStoreClient, IFileAUploadClient fileUploadAClient,
+            IFileBUploadClient fileUploadBClient, IFileDownloadClient fileDownloadClient,
+            ISystemCAPIClient systemCApiClient,
+            IPipelineCreationFacade pipelineCreationFacade)
         {
-            return PipelineCreationFacade.BuildFileUploadPipeline(true, true, true, 
+            this.systemASearchClient = systemASearchClient;
+            this.systemAStoreClient = systemAStoreClient;
+            this.fileUploadAClient = fileUploadAClient;
+            this.fileUploadBClient = fileUploadBClient;
+            this.fileDownloadClient = fileDownloadClient;
+            this.systemCApiClient = systemCApiClient;
+            this.pipelineCreationFacade = pipelineCreationFacade;
+        }
+
+        public AbstractPipeline BuildTypeAPipeline()
+        {
+            return pipelineCreationFacade.BuildFileUploadPipeline(true, true, true, 
                 fileUploadAClient, fileDownloadClient, systemASearchClient, systemAStoreClient);
         }
-        public static AbstractPipeline BuildTypeBPipeline()
+        public AbstractPipeline BuildTypeBPipeline()
         {
-            return PipelineCreationFacade.BuildFileUploadPipeline(true, false, false,
+            return pipelineCreationFacade.BuildFileUploadPipeline(true, false, false,
                 fileUploadBClient, fileDownloadClient, systemASearchClient, null);
         }
-        public static AbstractPipeline BuildTypeCPipeline()
+        public AbstractPipeline BuildTypeCPipeline()
         {
-            return PipelineCreationFacade.BuildIoTPipeline(true, systemCApiClient);
+            return pipelineCreationFacade.BuildIoTPipeline(true, systemCApiClient);
         }
 
-        public static AbstractPipeline BuildReportPipeline()
+        public AbstractPipeline BuildReportPipeline()
         {
             return new ReportPipeline(new List<AbstractPipeline> { BuildTypeBPipeline(), BuildTypeCPipeline() });
         }

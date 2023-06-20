@@ -8,13 +8,19 @@ using System.Threading.Tasks;
 
 namespace Book_Pipelines.Chapter11.IoC.Facade
 {
-    public class IoTFactory: AbstractFactory
+    public class IoTFactory: IIoTFactory
     {
-        public override AbstractPipeline GetPipeline(BasicEvent basicEvent)
+        private readonly IPipelineDirector director;
+
+        public IoTFactory(IPipelineDirector director)
+        {
+            this.director = director;
+        }
+        public AbstractPipeline GetPipeline(BasicEvent basicEvent)
         {
             return basicEvent.Type switch
             {
-                "TypeC" => PipelineDirector.BuildTypeCPipeline(),
+                "TypeC" => director.BuildTypeCPipeline(),
                 _ => throw new NotImplementedException()
             };
         }

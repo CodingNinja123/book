@@ -10,7 +10,6 @@ namespace Book_Pipelines.Chapter5.Facade
     public static class TokenFactory
     {
         private static Dictionary<SystemType,Token> tokens = new Dictionary<SystemType,Token>();
-
         public static Token GetToken(SystemType system)
         {
             if(tokens.ContainsKey(system) && tokens[system].ExpiresAt > DateTime.Now.AddMinutes(1))

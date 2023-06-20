@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace Book_Pipelines.Chapter11.IoC.Facade
 {
-    public class ReportFactory : AbstractFactory
+    public class ReportFactory : IReportFactory
     {
-        public override AbstractPipeline GetPipeline(BasicEvent basicEvent)
+        private readonly IPipelineDirector director;
+
+        public ReportFactory(IPipelineDirector director)
+        {
+            this.director = director;
+        }
+        public AbstractPipeline GetPipeline(BasicEvent basicEvent)
         {
             return basicEvent.Type switch
             {
-                "TypeR" => PipelineDirector.BuildReportPipeline(),
+                "TypeR" => director.BuildReportPipeline(),
                 _ => throw new NotImplementedException()
             };
         }
