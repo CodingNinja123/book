@@ -16,49 +16,49 @@ namespace Book_Pipelines.Chapter4.Adapter
 
         public FilePipelineBuilder<T> ShouldSaveMetadata(bool shouldSaveMetadata)
         {
-            pipeline.ShouldSaveMetadata = shouldSaveMetadata;
+            this.pipeline.ShouldSaveMetadata = shouldSaveMetadata;
             return this;
         }
 
         public FilePipelineBuilder<T> ShouldBeFilePreprocessed(bool shouldBeFilePreprocessed)
         {
-            pipeline.ShouldBeFilePreprocessed = shouldBeFilePreprocessed;
+            this.pipeline.ShouldBeFilePreprocessed = shouldBeFilePreprocessed;
             return this;
         }
 
         public FilePipelineBuilder<T> ShouldBeEventStored(bool shouldBeEventStored)
         {
-            pipeline.ShouldBeEventStored = shouldBeEventStored;
+            this.pipeline.ShouldBeEventStored = shouldBeEventStored;
             return this;
         }
 
         public FilePipelineBuilder<T> SetTargetSystemSearchApiClient(ICommunicationClient<string, string> targetSystemApiClient)
         {
-            pipeline.TargetSystemSearchApiClient = targetSystemApiClient;
+            this.pipeline.TargetSystemSearchApiClient = targetSystemApiClient;
             return this;
         }
 
         public FilePipelineBuilder<T> SetTargetSystemStoreApiClient(ICommunicationClient<string, string> targetSystemApiClient)
         {
-            pipeline.TargetSystemStoreApiClient = targetSystemApiClient;
+            this.pipeline.TargetSystemStoreApiClient = targetSystemApiClient;
             return this;
         }
 
         public FilePipelineBuilder<T> SetTargetSystemDownloadClient(ICommunicationClient<string, byte[]> downloadFileClient)
         {
-            pipeline.DownloadFileClient = downloadFileClient;
+            this.pipeline.DownloadFileClient = downloadFileClient;
             return this;
         }
 
         public FilePipelineBuilder<T> SetTargetSystemUploadClient(ICommunicationClient<UploadFileInfo, int> uploadFileClient)
         {
-            pipeline.UploadFileClient = uploadFileClient;
+            this.pipeline.UploadFileClient = uploadFileClient;
             return this;
         }
         
         public T Build()
         {
-            return pipeline;
+            return this.pipeline;
         }
     }
 }

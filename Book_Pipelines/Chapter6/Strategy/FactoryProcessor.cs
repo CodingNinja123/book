@@ -22,17 +22,17 @@ namespace Book_Pipelines.Chapter6.Strategy
         {
             switch (basicEvent.Source)
             {
-                case "IOT":
+                case Constants.IOT_EVENT_SOURCE:
                     {
                         iotFactory.GetPipeline(basicEvent).ProcessEvent(basicEvent as BaseIoTEvent);
                         break;
                     }
-                case ("FILE"):
+                case Constants.FILE_EVENT_SOURCE:
                     {
                         fileUploadFactory.GetPipeline(basicEvent).ProcessEvent(basicEvent as IUploadEventData);   
                         break;
                     }
-                case ("REPORT"):
+                case Constants.REPORT_EVENT_SOURCE:
                     {
                         fileUploadFactory.GetPipeline(basicEvent).ProcessEvent(basicEvent as IUploadEventData);
                         iotFactory.GetPipeline(basicEvent).ProcessEvent(basicEvent as IIoTEventData);

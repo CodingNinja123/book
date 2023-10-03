@@ -1,15 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Book_Pipelines.Chapter5.Proxy.IoTPipeline">
-    <Position X="0.5" Y="3.25" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AEAEIAAAAACAAAAAAgEAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter5\Proxy\IoTPipeline.cs</FileName>
-      <NewMemberFileName>Chapter4\Flyweight\IoTPipeline.cs</NewMemberFileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Book_Pipelines.Chapter5.Proxy.ReportEvent">
-    <Position X="8.75" Y="4.25" Width="1.5" />
+    <Position X="2.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAgAAAAAAAAAAAAAAAAAAgAABAAAQ=</HashCode>
       <FileName>Chapter5\Proxy\ReportEvent.cs</FileName>
@@ -18,23 +10,15 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Book_Pipelines.Chapter5.Proxy.ReportFactory">
-    <Position X="17.25" Y="1.25" Width="1.5" />
+    <Position X="11.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter5\Proxy\ReportFactory.cs</FileName>
       <NewMemberFileName>Chapter4\Flyweight\ReportFactory.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Book_Pipelines.Chapter5.Proxy.ReportPipeline">
-    <Position X="2.5" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter5\Proxy\ReportPipeline.cs</FileName>
-      <NewMemberFileName>Chapter4\Flyweight\ReportPipeline.cs</NewMemberFileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Book_Pipelines.Chapter5.Proxy.TokenFactory">
-    <Position X="15.25" Y="4.25" Width="1.75" />
+    <Position X="9.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter5\Proxy\TokenFactory.cs</FileName>
@@ -42,7 +26,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter5.Proxy.Token">
-    <Position X="15.25" Y="6" Width="1.75" />
+    <Position X="11.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAE=</HashCode>
       <FileName>Chapter5\Proxy\TokenFactory.cs</FileName>
@@ -50,7 +34,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter5.Proxy.UploadFileInfo">
-    <Position X="5.25" Y="6.25" Width="1.5" />
+    <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Chapter5\Proxy\UploadFileInfo.cs</FileName>
@@ -76,14 +60,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Book_Pipelines.Chapter5.Proxy.IoTFactory">
-    <Position X="13.25" Y="1.25" Width="1.5" />
+    <Position X="7.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter5\Proxy\IoTFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter5.Proxy.IoTData">
-    <Position X="5.25" Y="8.25" Width="1.5" />
+    <Position X="5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQ=</HashCode>
       <FileName>Chapter5\Proxy\IoTData.cs</FileName>
@@ -98,7 +82,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Book_Pipelines.Chapter5.Proxy.FileUploadFactory">
-    <Position X="15.25" Y="2.75" Width="1.5" />
+    <Position X="9.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter5\Proxy\FileFactory.cs</FileName>
@@ -113,7 +97,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Book_Pipelines.Chapter5.Proxy.BasicEvent">
-    <Position X="8.75" Y="1.25" Width="1.5" />
+    <Position X="2.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Chapter5\Proxy\BasicEvent.cs</FileName>
@@ -121,7 +105,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Book_Pipelines.Chapter5.Proxy.BaseUploadEvent">
-    <Position X="6.5" Y="4" Width="1.5" />
+    <Position X="0.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Chapter5\Proxy\BaseUploadEvent.cs</FileName>
@@ -129,29 +113,52 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Book_Pipelines.Chapter5.Proxy.BaseIoTEvent">
-    <Position X="10.75" Y="4" Width="1.5" />
+    <Position X="4.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQ=</HashCode>
       <FileName>Chapter5\Proxy\BaseIoTEvent.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Book_Pipelines.Chapter5.Proxy.AbstractPipeline">
-    <Position X="2.5" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
-      <FileName>Chapter5\Proxy\AbstractPipeline.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Book_Pipelines.Chapter5.Proxy.AbstractFactory">
-    <Position X="15.25" Y="1.25" Width="1.5" />
+    <Position X="9.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter5\Proxy\AbstractFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Book_Pipelines.Chapter4.Flyweight.AbstractPipeline">
+    <Position X="3" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter4\Flyweight\AbstractPipeline.cs</FileName>
+      <NewMemberFileName>Chapter4\Composite\AbstractPipeline.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Flyweight.FileUploadPipeline">
+    <Position X="5" Y="8.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AEAEMAAIAACAAAAgAgEAAAAAAAABAQBAQAAAAQAgAAE=</HashCode>
+      <FileName>Chapter4\Flyweight\FileUploadPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Flyweight.ReportPipeline">
+    <Position X="3" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter4\Flyweight\ReportPipeline.cs</FileName>
+      <NewMemberFileName>Chapter4\Composite\ReportPipeline.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Book_Pipelines.Chapter4.Flyweight.IoTPipeline">
+    <Position X="0.5" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AEAEIAAAAACAAAAAAgEAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter4\Flyweight\IoTPipeline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="Book_Pipelines.Chapter5.Proxy.IUploadEventData">
-    <Position X="3" Y="8.5" Width="1.5" />
+    <Position X="5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Chapter5\Proxy\IUploadEventData.cs</FileName>
@@ -166,14 +173,14 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Book_Pipelines.Chapter5.Proxy.IBasicEvent">
-    <Position X="1.75" Y="6.25" Width="1.5" />
+    <Position X="0.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Chapter5\Proxy\IBasicEvent.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="Book_Pipelines.Chapter4.Flyweight.SystemType">
-    <Position X="3.5" Y="6.25" Width="1.5" />
+    <Position X="7.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAEAAAA=</HashCode>
       <FileName>Chapter4\Flyweight\TokenFactory.cs</FileName>

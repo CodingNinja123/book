@@ -12,55 +12,64 @@ namespace Book_Pipelines.Chapter4.Adapter
     {
         private string token;
         public bool ShouldSaveMetadata {get;set;}
-
         public ICommunicationClient<IoTData, string> SystemCProcessingApiClient { get; set; }
+
+        public override void Process(BasicEvent basicEvent)
+        {
+            this.RequestToken();
+            try
+            {
+                if (this.ShouldSaveMetadata)
+                    this.SaveMetadata(basicEvent);
+
+                this.Notify(basicEvent, "PROCESSING_STARTED");
+                this.Validate(basicEvent);
+                this.ProcessEvent(basicEvent);
+
+                if (this.ShouldSaveMetadata)
+                    this.UpdateMetadata(basicEvent);
+
+                this.Notify(basicEvent, "PROCESSING_FINISHED");
+                Console.WriteLine();
+            }
+            catch (Exception ex)
+            {
+                this.Notify(basicEvent, ex.ToString());
+            }
+        }
+
+        public override IoTPipeline Copy()
+        {
+            IoTPipeline result = new IoTPipeline();
+
+            result.ShouldSaveMetadata = this.ShouldSaveMetadata;
+            result.SystemCProcessingApiClient = this.SystemCProcessingApiClient;
+            result.token = this.token;
+            return result;
+        }
 
         protected void ProcessEvent(BasicEvent basicEvent)
         {
             var iotEvent = basicEvent as BaseIoTEvent;
-            Notify(basicEvent, "Processing event");
+            this.Notify(basicEvent, "Processing event");
             var data = new IoTData
             {
                 Action = iotEvent.Action,
                 Source = iotEvent.Source,
                 Value = iotEvent.Value
             };
-            SystemCProcessingApiClient.ExecuteRequest(data);
+            this.SystemCProcessingApiClient.ExecuteRequest(data);
 
-        }
-
-        public override void Process(BasicEvent basicEvent)
-        {
-            RequestToken();
-            try
-            {
-                if(ShouldSaveMetadata)
-                    SaveMetadata(basicEvent);
-               
-                Notify(basicEvent, "PROCESSING_STARTED");
-                Validate(basicEvent);
-                ProcessEvent(basicEvent);
-                
-                if (ShouldSaveMetadata)
-                    UpdateMetadata(basicEvent);
-                
-                Notify(basicEvent, "PROCESSING_FINISHED");
-                Console.WriteLine();
-            }
-            catch (Exception ex)
-            {
-                Notify(basicEvent, ex.ToString());
-            }
         }
 
         protected virtual Guid SaveMetadata(BasicEvent basicEvent)
         {
-            Notify(basicEvent, "Saving metadata");
+            this.Notify(basicEvent, "Saving metadata");
             return Guid.NewGuid();
         }
         protected virtual void UpdateMetadata(BasicEvent basicEvent)
         {
-            Notify(basicEvent, "Updating metdata");
+            this.Notify(basicEvent, "Updating metdata");
         }
         protected virtual void Notify(BasicEvent badicEvent, string message)
         {
@@ -79,19 +88,9 @@ namespace Book_Pipelines.Chapter4.Adapter
                 throw new ArgumentException("Filename of the event cannot be null");
         }
 
-        public override IoTPipeline Copy()
-        {
-            IoTPipeline result = new IoTPipeline();
-          
-            result.ShouldSaveMetadata = this.ShouldSaveMetadata;
-            result.SystemCProcessingApiClient = this.SystemCProcessingApiClient;
-            result.token = this.token;
-            return result;
-        }
-
         private void RequestToken()
         {
-            if (!string.IsNullOrWhiteSpace(token))
+            if (!string.IsNullOrWhiteSpace(this.token))
                 return;
 
             Thread.Sleep(200);

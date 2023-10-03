@@ -21,14 +21,14 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
 
         public virtual void RegisterStep(IBasicEvent basicEvent, string step)
         {
-            if (RegisterStepExecution != null)
-                RegisterStepExecution(basicEvent, step);
+            if (this.RegisterStepExecution != null)
+                this.RegisterStepExecution(basicEvent, step);
         }
 
         public virtual void Process(IBasicEvent request)
         {
-            if (nextProcessor != null)
-                nextProcessor.Process(request);
+            if (this.nextProcessor != null)
+                this.nextProcessor.Process(request);
         }
     }
 }

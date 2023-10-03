@@ -13,8 +13,8 @@ namespace Book_Pipelines.Chapter_2.AbstractFactoryNM
         {
             return basicEvent.Source switch
             {
-                "IOT" => new IoTFactory(),
-                "FILE" => new FileUploadFactory(),
+                Constants.IOT_EVENT_SOURCE => new IoTFactory(),
+                Constants.FILE_EVENT_SOURCE => new FileUploadFactory(),
                 _ => throw new NotImplementedException("Cannot create a factory for non known source"),
             };
         }

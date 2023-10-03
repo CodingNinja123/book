@@ -64,7 +64,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain.UpdateMetadataProcessor">
-    <Position X="14" Y="4" Width="1.5" />
+    <Position X="13.75" Y="4" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter6\Chain Of Responsibility\Chain\UpdateMetadataProcessor.cs</FileName>

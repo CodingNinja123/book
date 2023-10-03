@@ -12,8 +12,8 @@ namespace Book_Pipelines.Chapter_2.AbstractFactoryNM
         {
             return basicEvent.Type switch
             {
-                "TypeA" => new TypeAPipeline(),
-                "TypeB" => new TypeBPipeline(),
+                Constants.A_EVENT_TYPE => new TypeAPipeline(),
+                Constants.B_EVENT_TYPE => new TypeBPipeline(),
                 _ => throw new NotImplementedException()
             };
         }

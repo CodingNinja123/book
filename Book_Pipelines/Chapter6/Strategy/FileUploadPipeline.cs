@@ -16,15 +16,15 @@ namespace Book_Pipelines.Chapter6.Strategy
 
         public override void Preprocess(IUploadEventData basicEvent)
         {
-            RegisterStep(basicEvent, "EVENT_PREPROCESSING");
-            DownloadFileClient.ExecuteRequest(basicEvent.FileUrl);
+            this.RegisterStep(basicEvent, "EVENT_PREPROCESSING");
+            this.DownloadFileClient.ExecuteRequest(basicEvent.FileUrl);
         }
         public override void ProcessEvent(IUploadEventData basicEvent)
         {
-            if (UploadFileClient == null)
+            if (this.UploadFileClient == null)
                 return;
 
-            RegisterStep(basicEvent, "EVENT_PROCESSING");
+            this.RegisterStep(basicEvent, "EVENT_PROCESSING");
             this.UploadFileClient.ExecuteRequest(new UploadFileInfo
             {
                 FileName = basicEvent.FileName,
@@ -33,22 +33,22 @@ namespace Book_Pipelines.Chapter6.Strategy
         }
         public override void Search(IUploadEventData basicEvent)
         {
-            RegisterStep(basicEvent, "EVENT_SEARCH");
-            TargetSystemSearchApiClient.ExecuteRequest(basicEvent.FileName);
+            this.RegisterStep(basicEvent, "EVENT_SEARCH");
+            this.TargetSystemSearchApiClient.ExecuteRequest(basicEvent.FileName);
         }
         public override void Store(IUploadEventData basicEvent)
         {
-            RegisterStep(basicEvent, "EVENT_STORE");
-            TargetSystemStoreApiClient.ExecuteRequest(basicEvent.FileName);
+            this.RegisterStep(basicEvent, "EVENT_STORE");
+            this.TargetSystemStoreApiClient.ExecuteRequest(basicEvent.FileName);
         }
         public override Guid SaveMetadata(IUploadEventData basicEvent)
         {
-            RegisterStep(basicEvent, "SAVE_METADATA");
+            this.RegisterStep(basicEvent, "SAVE_METADATA");
             return Guid.NewGuid();
         }
         public override void UpdateMetadata(IUploadEventData basicEvent)
         {
-            RegisterStep(basicEvent, "UPDATE_PROCESSING");
+            this.RegisterStep(basicEvent, "UPDATE_PROCESSING");
         }
         public override void Validate(IUploadEventData basicEvent)
         {

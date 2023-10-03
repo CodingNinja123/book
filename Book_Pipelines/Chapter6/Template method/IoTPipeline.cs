@@ -7,14 +7,14 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
         public ICommunicationClient<IoTData, string> SystemCApiClient { get; set; }
         public IoTPipeline()
         {
-            ShouldBeEventStored = false;
-            ShouldBePreprocessed = false;
+            this.ShouldBeEventStored = false;
+            this.ShouldBePreprocessed = false;
         }
         protected override void ProcessEvent(IIoTEventData basicEvent)
         {
-            RegisterStep(basicEvent, "EVENT_PROCESSING");
+            this.RegisterStep(basicEvent, "EVENT_PROCESSING");
             var data = new IoTData(basicEvent.Source, basicEvent.Action, basicEvent.Value);
-            SystemCApiClient.ExecuteRequest(data);
+            this.SystemCApiClient.ExecuteRequest(data);
         }
         protected override void Validate(IIoTEventData basicEvent)
         {   

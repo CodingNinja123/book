@@ -18,7 +18,7 @@ namespace Book_Pipelines.Chapter4.Adapter
         public async Task<string> ExecuteRequest(IoTData data)
         {
             string jsonString = JsonSerializer.Serialize(data);
-            Console.WriteLine($"Sending message to {baseUrl}. Message: {jsonString}");
+            Console.WriteLine($"Sending message to {this.baseUrl}. Message: {jsonString}");
             return await Task.FromResult("Success!");
         }
     }

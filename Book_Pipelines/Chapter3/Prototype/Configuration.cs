@@ -9,12 +9,12 @@
 
         private void LoadData()
         {
-            this.TargetASystemUploadUrl = "http://file.storage.com/systemA/upload";
-            this.TargetASystemApiUrl = "http://systemA.com/api";
-            this.TargetBSystemUploadUrl = "http://file.storage.com/systemB/upload";
-            this.TargetBSystemApiUrl = "http://systemB.com/api";
-            this.TargetCSystemApiUrl = "http://systemC.com/api";
-            this.TargetCSystemProcessingApiUrl = "http://systemC.processing.com/api";
+            this.TargetASystemUploadUrl = "http://file.storage.test/systemA/upload";
+            this.TargetASystemApiUrl = "http://systemA.test/api";
+            this.TargetBSystemUploadUrl = "http://file.storage.test/systemB/upload";
+            this.TargetBSystemApiUrl = "http://systemB.test/api";
+            this.TargetCSystemApiUrl = "http://systemC.test/api";
+            this.TargetCSystemProcessingApiUrl = "http://systemC.processing.test/api";
         }
 
         public static Configuration Instance

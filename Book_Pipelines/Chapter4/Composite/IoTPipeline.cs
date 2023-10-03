@@ -4,8 +4,43 @@
     {
         private string token;
         public bool ShouldSaveMetadata {get;set;}
-
         public ICommunicationClient<IoTData, string> SystemCProcessingApiClient { get; set; }
+
+        public override void Process(IBasicEvent basicEvent)
+        {
+            this.RequestToken();
+            var data = basicEvent as IIoTEventData;
+
+            try
+            {
+                if (this.ShouldSaveMetadata)
+                    this.SaveMetadata(data);
+
+                this.Notify(data, "PROCESSING_STARTED");
+                this.Validate(data);
+                this.ProcessEvent(data);
+
+                if (this.ShouldSaveMetadata)
+                    this.UpdateMetadata(data);
+
+                this.Notify(data, "PROCESSING_FINISHED");
+                Console.WriteLine();
+            }
+            catch (Exception ex)
+            {
+                this.Notify(data, ex.ToString());
+            }
+        }
+
+        public override IoTPipeline Copy()
+        {
+            IoTPipeline result = new IoTPipeline();
+
+            result.ShouldSaveMetadata = this.ShouldSaveMetadata;
+            result.SystemCProcessingApiClient = this.SystemCProcessingApiClient;
+            result.token = this.token;
+            return result;
+        }
 
         protected void ProcessEvent(IIoTEventData basicEvent)
         {
@@ -20,40 +55,14 @@
             SystemCProcessingApiClient.ExecuteRequest(data);
         }
 
-        public override void Process(IBasicEvent basicEvent)
-        {
-            RequestToken();
-            var data = basicEvent as IIoTEventData;
-
-            try
-            {
-                if(ShouldSaveMetadata)
-                    SaveMetadata(data);
-               
-                Notify(data, "PROCESSING_STARTED");
-                Validate(data);
-                ProcessEvent(data);
-                
-                if (ShouldSaveMetadata)
-                    UpdateMetadata(data);
-                
-                Notify(data, "PROCESSING_FINISHED");
-                Console.WriteLine();
-            }
-            catch (Exception ex)
-            {
-                Notify(data, ex.ToString());
-            }
-        }
-
         protected virtual Guid SaveMetadata(IIoTEventData basicEvent)
         {
-            Notify(basicEvent, "Saving metadata");
+            this.Notify(basicEvent, "Saving metadata");
             return Guid.NewGuid();
         }
         protected virtual void UpdateMetadata(IIoTEventData basicEvent)
         {
-            Notify(basicEvent, "Updating metdata");
+            this.Notify(basicEvent, "Updating metdata");
         }
         protected virtual void Notify(IIoTEventData badicEvent, string message)
         {
@@ -70,19 +79,9 @@
                 throw new ArgumentException("Filename of the event cannot be null");
         }
 
-        public override IoTPipeline Copy()
-        {
-            IoTPipeline result = new IoTPipeline();
-          
-            result.ShouldSaveMetadata = this.ShouldSaveMetadata;
-            result.SystemCProcessingApiClient = this.SystemCProcessingApiClient;
-            result.token = this.token;
-            return result;
-        }
-
         private void RequestToken()
         {
-            if (!string.IsNullOrWhiteSpace(token))
+            if (!string.IsNullOrWhiteSpace(this.token))
                 return;
 
             Thread.Sleep(200);

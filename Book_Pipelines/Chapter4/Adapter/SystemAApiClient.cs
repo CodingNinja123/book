@@ -16,7 +16,7 @@ namespace Book_Pipelines.Chapter4.Adapter
 
         public async Task<string> ExecuteRequest(string data)
         {
-            Console.WriteLine($"Sending message to {baseUrl}. Message: {data}");
+            Console.WriteLine($"Sending message to {this.baseUrl}. Message: {data}");
             return await Task.FromResult(string.Empty);
         }
     }

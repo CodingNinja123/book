@@ -12,9 +12,9 @@ namespace Book_Pipelines.Chapter_2.Factory
         {
             return basicEvent.Type switch
             {
-                "TypeA" => new TypeAProcessingPipeline(),
-                "TypeB" => new TypeBProcessingPipeline(),
-                "TypeC" => new TypeCProcessingPipeline(),
+                Constants.A_EVENT_TYPE => new TypeAProcessingPipeline(),
+                Constants.B_EVENT_TYPE => new TypeBProcessingPipeline(),
+                Constants.C_EVENT_TYPE => new TypeCProcessingPipeline(),
                 _ => throw new NotImplementedException("There is no such pipeline to process passed event") 
             };
         }

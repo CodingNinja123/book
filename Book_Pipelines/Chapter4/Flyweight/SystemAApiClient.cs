@@ -18,7 +18,7 @@ namespace Book_Pipelines.Chapter4.Flyweight
             var token = TokenFactory.GetToken(SystemType.SystemAApi);
             Console.WriteLine($"Token received {token.TokenValue}");
 
-            Console.WriteLine($"Sending message to {baseUrl}. Message: {data}");
+            Console.WriteLine($"Sending message to {this.baseUrl}. Message: {data}");
             return await Task.FromResult(string.Empty);
         }
     }

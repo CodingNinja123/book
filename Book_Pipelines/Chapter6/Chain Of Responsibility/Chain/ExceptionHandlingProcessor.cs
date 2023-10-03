@@ -16,44 +16,43 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
             this.LogginClient.StartSession(Guid.NewGuid());
         }
 
-        private void RegisterStepExecutionHandler(IBasicEvent basicEvent, string step)
-        {
-            var message = $"Executing step: {step} for event: {basicEvent.Id}-{basicEvent.Source}-{basicEvent.Type}";
-            LogginClient.Log(message);
-        }
-
         public override void Process(IBasicEvent basicEvent)
         {
             try
             {
-                RegisterStep(basicEvent, "PROCESSING_STARTED");
+                this.RegisterStep(basicEvent, "PROCESSING_STARTED");
                 base.Process(basicEvent);
-                RegisterStep(basicEvent, "PROCESSING_FINISHED");
+                this.RegisterStep(basicEvent, "PROCESSING_FINISHED");
             }
             catch (gRpcCommunicationException)
             {
-                RegisterStep(basicEvent, "PROCESSING_FAILED");
+                this.RegisterStep(basicEvent, "PROCESSING_FAILED");
                 Console.WriteLine("gRpc communication error received");
             }
             catch (HttpCommunicationException)
             {
-                RegisterStep(basicEvent, "PROCESSING_FAILED");
+                this.RegisterStep(basicEvent, "PROCESSING_FAILED");
                 Console.WriteLine("Http communication error received");
             }
             catch (FileCommunicationException)
             {
-                RegisterStep(basicEvent, "PROCESSING_FAILED");
+                this.RegisterStep(basicEvent, "PROCESSING_FAILED");
                 Console.WriteLine("File communication error received");
             }
             catch (PipelineProcessingException)
             {
-                RegisterStep(basicEvent, "PROCESSING_FAILED");
+                this.RegisterStep(basicEvent, "PROCESSING_FAILED");
                 Console.WriteLine("Pipeline business error received");
             }
             finally
             {
-                LogginClient.EndSession();
+                this.LogginClient.EndSession();
             }
+        }
+        private void RegisterStepExecutionHandler(IBasicEvent basicEvent, string step)
+        {
+            var message = $"Executing step: {step} for event: {basicEvent.Id}-{basicEvent.Source}-{basicEvent.Type}";
+            this.LogginClient.Log(message);
         }
     }
 }

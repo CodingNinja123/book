@@ -9,7 +9,7 @@ namespace Book_Pipelines.Chapter4.Adapter
     public class FileUploadPipeline : AbstractPipeline
     {
         private string token;
-
+        private BaseUploadEvent data = null;
         public bool ShouldSaveMetadata { get; set; }
         public bool ShouldBeFilePreprocessed { get; set; }
         public bool ShouldBeEventStored { get; set; }
@@ -18,21 +18,51 @@ namespace Book_Pipelines.Chapter4.Adapter
         public ICommunicationClient<string, string> TargetSystemStoreApiClient { get; set; }
         public ICommunicationClient<string, byte[]> DownloadFileClient { get; set; }
 
-        private BaseUploadEvent data = null;
+        public override void Process(BasicEvent basicEvent)
+        {
+            this.RequestToken();
+            try
+            {
+                if (this.ShouldSaveMetadata)
+                    this.SaveMetadata(basicEvent);
+
+                this.Notify(basicEvent, "PROCESSING_STARTED");
+                this.Validate(basicEvent);
+
+                if (this.ShouldBeFilePreprocessed)
+                    this.Preprocess(basicEvent);
+
+                this.Search(basicEvent);
+                this.ProcessEvent(basicEvent);
+
+                if (this.ShouldBeEventStored)
+                    this.Store(basicEvent);
+
+                if (this.ShouldSaveMetadata)
+                    this.UpdateMetadata(basicEvent);
+
+                this.Notify(basicEvent, "PROCESSING_FINISHED");
+                Console.WriteLine();
+            }
+            catch (Exception ex)
+            {
+                this.Notify(basicEvent, ex.ToString());
+            }
+        }
 
         protected void Preprocess(BasicEvent basicEvent)
         {
             this.data = basicEvent as BaseUploadEvent;
-            Notify(basicEvent, "Preprocessing event");
-            DownloadFileClient.ExecuteRequest(this.data.FileUrl);
+            this.Notify(basicEvent, "Preprocessing event");
+            this.DownloadFileClient.ExecuteRequest(this.data.FileUrl);
         }
 
         protected void ProcessEvent(BasicEvent basicEvent)
         {
-            if (UploadFileClient == null)
+            if (this.UploadFileClient == null)
                 return;
 
-            Notify(basicEvent, "Processing event");
+            this.Notify(basicEvent, "Processing event");
             this.UploadFileClient.ExecuteRequest(new UploadFileInfo
             {
                 FileName = this.data.FileName,
@@ -42,56 +72,24 @@ namespace Book_Pipelines.Chapter4.Adapter
 
         protected void Search(BasicEvent basicEvent)
         {
-            Notify(basicEvent, "Searching event in the target system");
-            TargetSystemSearchApiClient.ExecuteRequest(this.data.FileName);
+            this.Notify(basicEvent, "Searching event in the target system");
+            this.TargetSystemSearchApiClient.ExecuteRequest(this.data.FileName);
         }
 
         protected void Store(BasicEvent basicEvent)
         {
-            Notify(basicEvent, "Storing event in the target system");
-            TargetSystemStoreApiClient.ExecuteRequest(this.data.FileName);
-        }
-
-        public override void Process(BasicEvent basicEvent)
-        {
-            RequestToken();
-            try
-            {
-                if (ShouldSaveMetadata)
-                    SaveMetadata(basicEvent);
-                
-                Notify(basicEvent, "PROCESSING_STARTED");
-                Validate(basicEvent);
-                
-                if(ShouldBeFilePreprocessed)
-                    Preprocess(basicEvent);
-
-                Search(basicEvent);
-                ProcessEvent(basicEvent);
-
-                if (ShouldBeEventStored)
-                    Store(basicEvent);
-                
-                if(ShouldSaveMetadata)
-                    UpdateMetadata(basicEvent);
-                
-                Notify(basicEvent, "PROCESSING_FINISHED");
-                Console.WriteLine();
-            }
-            catch (Exception ex)
-            {
-                Notify(basicEvent, ex.ToString());
-            }
+            this.Notify(basicEvent, "Storing event in the target system");
+            this.TargetSystemStoreApiClient.ExecuteRequest(this.data.FileName);
         }
 
         protected virtual Guid SaveMetadata(BasicEvent basicEvent)
         {
-            Notify(basicEvent, "Saving metadata");
+            this.Notify(basicEvent, "Saving metadata");
             return Guid.NewGuid();
         }
         protected virtual void UpdateMetadata(BasicEvent basicEvent)
         {
-            Notify(basicEvent, "Updating metdata");
+            this.Notify(basicEvent, "Updating metdata");
         }
         protected virtual void Notify(BasicEvent badicEvent, string message)
         {
@@ -126,7 +124,7 @@ namespace Book_Pipelines.Chapter4.Adapter
 
         private void RequestToken()
         {
-            if (!string.IsNullOrWhiteSpace(token))
+            if (!string.IsNullOrWhiteSpace(this.token))
                 return;
 
             Thread.Sleep(200);

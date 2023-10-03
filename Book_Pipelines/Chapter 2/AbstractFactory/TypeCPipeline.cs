@@ -8,8 +8,8 @@ namespace Book_Pipelines.Chapter_2.AbstractFactoryNM
 {
     public class TypeCPipeline : IoTPipeline
     {
-        private string targetSystemApiUrl = "http://systemC.com/api";
-        private string targetSystemProcessingApiUel = "http://systemC.processing.com/api";
+        private string targetSystemApiUrl = "http://systemC.test/api";
+        private string targetSystemProcessingApiUel = "http://systemC.processing.test/api";
 
         protected override void ProcessEvent(BasicEvent basicEvent)
         {

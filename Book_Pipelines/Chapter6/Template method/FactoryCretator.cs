@@ -24,17 +24,17 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
         {
             switch (basicEvent.Source)
             {
-                case "IOT":
+                case Constants.IOT_EVENT_SOURCE:
                     {
                         iotFactory.GetPipeline(basicEvent).Process(basicEvent as BaseIoTEvent);
                         break;
                     }
-                case ("FILE"):
+                case Constants.FILE_EVENT_SOURCE:
                     {
                         fileUploadFactory.GetPipeline(basicEvent).Process(basicEvent as BaseUploadEvent);
                         break;
                     }
-                case ("REPORT"):
+                case Constants.REPORT_EVENT_SOURCE:
                     {
                         reportFactory.GetPipeline(basicEvent).Process(basicEvent as ReportEvent);
                         break;

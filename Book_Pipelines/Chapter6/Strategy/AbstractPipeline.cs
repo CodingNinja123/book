@@ -6,8 +6,8 @@
         public event RegisterStepExecutionDelegate RegisterStepExecution;
         public virtual void RegisterStep(T basicEvent, string step)
         {
-            if (RegisterStepExecution != null)
-                RegisterStepExecution(basicEvent, step);
+            if (this.RegisterStepExecution != null)
+                this.RegisterStepExecution(basicEvent, step);
         }
         public virtual void Preprocess(T basicEvent)
         {

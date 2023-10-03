@@ -9,13 +9,13 @@
 
         private void LoadData()
         {
-            this.TargetASystemUploadUrl = "http://file.storage.com/systemA/upload";
-            this.TargetASystemSearchApiUrl = "http://systemA.com/api/search";
-            this.TargetASystemStoreApiUrl = "http://systemA.com/api/store";
-            this.TargetBSystemUploadUrl = "http://file.storage.com/systemB/upload";
-            this.TargetBSystemApiUrl = "http://systemB.com/api";
-            this.TargetCSystemApiUrl = "http://systemC.com/api";
-            this.TargetCSystemProcessingApiUrl = "http://systemC.processing.com/api";
+            this.TargetASystemUploadUrl = "http://file.storage.test/systemA/upload";
+            this.TargetASystemSearchApiUrl = "http://systemA.test/api/search";
+            this.TargetASystemStoreApiUrl = "http://systemA.test/api/store";
+            this.TargetBSystemUploadUrl = "http://file.storage.test/systemB/upload";
+            this.TargetBSystemApiUrl = "http://systemB.test/api";
+            this.TargetCSystemApiUrl = "http://systemC.test/api";
+            this.TargetCSystemProcessingApiUrl = "http://systemC.processing.test/api";
         }
 
         public static Configuration Instance

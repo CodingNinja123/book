@@ -13,8 +13,8 @@ namespace Book_Pipelines.Chapter6.Strategy
         {
             return basicEvent.Type switch
             {
-                "TypeC" => PipelineDirector.BuildTypeCPipeline(),
-                "TypeR" => PipelineDirector.BuildTypeCPipeline(),
+                Constants.C_EVENT_TYPE => PipelineDirector.BuildTypeCPipeline(),
+                Constants.R_EVENT_TYPE => PipelineDirector.BuildTypeCPipeline(),
                 _ => throw new NotImplementedException()
             };
         }

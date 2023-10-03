@@ -3,8 +3,8 @@
     public class TypeCProcessingPipeline : AbstractPipeline
     {
         private EventTypeC data = null;
-        private string targetSystemApiUrl = "http://systemC.com/api";
-        private string targetSystemProcessingApiUel = "http://systemC.processing.com/api";
+        private string targetSystemApiUrl = "http://systemC.test/api";
+        private string targetSystemProcessingApiUel = "http://systemC.processing.test/api";
         protected override object Preprocess(BasicEvent basicEvent)
         {
             this.data = (basicEvent as EventTypeC) ?? new EventTypeC();

@@ -13,9 +13,9 @@ namespace Book_Pipelines.Chapter6.ChainOfResponsibility
         {
             return basicEvent.Type switch
             {
-                "TypeA" => PipelineDirector.BuildTypeAPipeline(),
-                "TypeB" => PipelineDirector.BuildTypeBPipeline(),
-                "TypeR" => PipelineDirector.BuildTypeBPipeline(),
+                Constants.A_EVENT_TYPE => PipelineDirector.BuildTypeAPipeline(),
+                Constants.B_EVENT_TYPE => PipelineDirector.BuildTypeBPipeline(),
+                Constants.R_EVENT_TYPE => PipelineDirector.BuildTypeBPipeline(),
                 _ => throw new NotImplementedException()
             };
         }

@@ -9,12 +9,12 @@
 
         private void LoadData()
         {
-            this.ASystemUploadUrl = "http://file.storage.com/systemA/upload";
-            this.ASystemSearchApi = "http://systemA.com/api/search";
-            this.ASystemStoreApi = "http://systemA.com/api/store";
-            this.BSystemUploadUrl = "http://file.storage.com/systemB/upload";
-            this.BSystemApi = "http://systemB.com/api";
-            this.CSystemApi = "http://systemC.processing.com/api";
+            this.ASystemUploadUrl = "http://file.storage.test/systemA/upload";
+            this.ASystemSearchApi = "http://systemA.test/api/search";
+            this.ASystemStoreApi = "http://systemA.test/api/store";
+            this.BSystemUploadUrl = "http://file.storage.test/systemB/upload";
+            this.BSystemApi = "http://systemB.test/api";
+            this.CSystemApi = "http://systemC.processing.test/api";
             this.DashboardLoggingUrl = "http://logging.url";
         }
 

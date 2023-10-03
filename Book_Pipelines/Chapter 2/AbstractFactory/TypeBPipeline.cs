@@ -10,8 +10,8 @@ namespace Book_Pipelines.Chapter_2.AbstractFactoryNM
     public class TypeBPipeline : UploadFilePipeleine
     {
         private BaseUploadEvent data = null;
-        private string targetSystemUploadUrl = "http://file.storage.com/systemB/upload";
-        private string targetSystemApiUrl = "http://systemB.com/api";
+        private string targetSystemUploadUrl = "http://file.storage.test/systemB/upload";
+        private string targetSystemApiUrl = "http://systemB.test/api";
 
         protected override object Preprocess(BasicEvent basicEvent)
         {

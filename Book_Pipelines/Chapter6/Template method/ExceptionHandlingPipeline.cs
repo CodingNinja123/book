@@ -7,17 +7,19 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
     {
         private AbstractPipeline<T> internalPipeline;
         private Logger loggingClient;
+        
+        public ExceptionHandlingPipeline()
+        {
+            this.RegisterStepExecution += RegisterStepExecutionHandler;
+        }
+
         public Logger LoggingClient
         {
             set
             {
-                loggingClient = value;
-                loggingClient.StartSession(Guid.NewGuid());
+                this.loggingClient = value;
+                this.loggingClient.StartSession(Guid.NewGuid());
             }
-        }
-        public ExceptionHandlingPipeline()
-        {
-            this.RegisterStepExecution += RegisterStepExecutionHandler;
         }
         public AbstractPipeline<T> Pipeline
         {
@@ -30,43 +32,43 @@ namespace Book_Pipelines.Chapter5.TemplateMethod
                 this.internalPipeline.RegisterStepExecution += RegisterStepExecutionHandler;
             }
         }
-        private void RegisterStepExecutionHandler(IBasicEvent basicEvent, string step)
-        {
-            var message = $"Executing step: {step} for event: {basicEvent.Id}-{basicEvent.Source}-{basicEvent.Type}";
-            loggingClient.Log(message);
-        }
         public override void Process(T basicEvent)
         {
             try
             {
-                RegisterStep(basicEvent, "PROCESSING_STARTED");
-                internalPipeline.Process(basicEvent);
-                RegisterStep(basicEvent, "PROCESSING_FINISHED");
+                this.RegisterStep(basicEvent, "PROCESSING_STARTED");
+                this.internalPipeline.Process(basicEvent);
+                this.RegisterStep(basicEvent, "PROCESSING_FINISHED");
             }
             catch (gRpcCommunicationException)
             {
-                RegisterStep(basicEvent, "PROCESSING_FAILED");
+                this.RegisterStep(basicEvent, "PROCESSING_FAILED");
                 Console.WriteLine("gRpc communication error received");
             }
             catch (HttpCommunicationException)
             {
-                RegisterStep(basicEvent, "PROCESSING_FAILED");
+                this.RegisterStep(basicEvent, "PROCESSING_FAILED");
                 Console.WriteLine("Http communication error received");
             }
             catch (FileCommunicationException)
             {
-                RegisterStep(basicEvent, "PROCESSING_FAILED");
+                this.RegisterStep(basicEvent, "PROCESSING_FAILED");
                 Console.WriteLine("File communication error received");
             }
             catch (PipelineProcessingException)
             {
-                RegisterStep(basicEvent, "PROCESSING_FAILED");
+                this.RegisterStep(basicEvent, "PROCESSING_FAILED");
                 Console.WriteLine("Pipeline business error received");
             }
             finally
             {
-                loggingClient.EndSession();
+                this.loggingClient.EndSession();
             }
+        }
+        private void RegisterStepExecutionHandler(IBasicEvent basicEvent, string step)
+        {
+            var message = $"Executing step: {step} for event: {basicEvent.Id}-{basicEvent.Source}-{basicEvent.Type}";
+            this.loggingClient.Log(message);
         }
     }
 }

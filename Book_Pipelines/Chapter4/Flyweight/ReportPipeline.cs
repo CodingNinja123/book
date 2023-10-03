@@ -11,7 +11,7 @@
 
         public override void Process(IBasicEvent basicEvent)
         {
-            pipelines.ForEach(x => x.Process(basicEvent));
+            this.pipelines.ForEach(x => x.Process(basicEvent));
         }
     }
 }

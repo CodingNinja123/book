@@ -12,7 +12,7 @@ namespace Book_Pipelines.Chapter_2.AbstractFactoryNM
         {
             return basicEvent.Type switch
             {
-                "TypeC" => new TypeCPipeline(),
+                Constants.C_EVENT_TYPE => new TypeCPipeline(),
                 _ => throw new NotImplementedException()
             };
         }

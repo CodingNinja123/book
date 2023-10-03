@@ -17,22 +17,22 @@ namespace Book_Pipelines.Chapter6.Strategy
         }
         public ExceptionHandlingPipelineBuilder<T, T1> SetLoggingClient(ILoggingDestination loggingDestination)
         {
-            pipeline.LoggingClient = new Logger(loggingDestination);
+            this.pipeline.LoggingClient = new Logger(loggingDestination);
             return this;
         }
         public ExceptionHandlingPipelineBuilder<T, T1> SetProcessingStrategy(IStrategy<T1> strategy)
         {
-            pipeline.Strategy = strategy;
+            this.pipeline.Strategy = strategy;
             return this;
         }
         public ExceptionHandlingPipelineBuilder<T, T1> SetInternalPipeline(AbstractPipeline<T1> internalPipeline)
         {
-            pipeline.Pipeline = internalPipeline;
+            this.pipeline.Pipeline = internalPipeline;
             return this;
         }
         public ExceptionHandlingPipeline<T1> Build()
         {
-            return pipeline;
+            return this.pipeline;
         }
     }
 }

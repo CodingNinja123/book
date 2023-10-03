@@ -17,13 +17,13 @@ namespace Book_Pipelines.Chapter4.Flyweight
 
         public IoTPipelineBuilder<T> ShouldSaveMetadata(bool shouldSaveMetadata)
         {
-            pipeline.ShouldSaveMetadata = shouldSaveMetadata;
+            this.pipeline.ShouldSaveMetadata = shouldSaveMetadata;
             return this;
         }
 
         public IoTPipelineBuilder<T> SetTargetApiClient(ICommunicationClient<IoTData,string> targetCProcessingClient)
         {
-            pipeline.SystemCApiClient = targetCProcessingClient;
+            this.pipeline.SystemCApiClient = targetCProcessingClient;
             return this;
         }
 

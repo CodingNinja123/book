@@ -9,91 +9,91 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.FileUploadPipeline">
-    <Position X="8.25" Y="8.25" Width="2.25" />
+    <Position X="8.25" Y="5.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AUEEIAAYAACAAAAAAgEAAAAAAoABAQBAAAAQAQAgAAA=</HashCode>
       <FileName>Chapter3\Prototype\FileUploadPipeline.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.IoTPipeline">
-    <Position X="3" Y="8.25" Width="2" />
+    <Position X="3.25" Y="6.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AVEEIAAAAACAAAAAAgEAAAAAAoAAAABAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter3\Prototype\IoTPipeline.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.AbstractFactory">
-    <Position X="12.5" Y="5.25" Width="1.5" />
+    <Position X="14.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter3\Prototype\AbstractFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.BaseIoTEvent">
-    <Position X="4.25" Y="16.25" Width="1.5" />
+    <Position X="3.5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQ=</HashCode>
       <FileName>Chapter3\Prototype\BaseIoTEvent.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.BaseUploadEvent">
-    <Position X="6.5" Y="16.25" Width="1.5" />
+    <Position X="8.5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Chapter3\Prototype\BaseUploadEvent.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.BasicEvent">
-    <Position X="5.5" Y="14.25" Width="1.5" />
+    <Position X="6" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Chapter3\Prototype\BasicEvent.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.Configuration">
-    <Position X="15" Y="8.5" Width="1.5" />
+    <Position X="18.25" Y="8.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAgAQQAAAYAAAAAAAAAABAAAAFQAAAAAAAAAA=</HashCode>
       <FileName>Chapter3\Prototype\Configuration.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.FactoryCreator">
-    <Position X="12" Y="4" Width="2.5" />
+    <Position X="14.25" Y="4.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAIAABAAAAAAA=</HashCode>
       <FileName>Chapter3\Prototype\FactoryCretator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.FileUploadFactory">
-    <Position X="13.75" Y="7" Width="1.5" />
+    <Position X="16.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter3\Prototype\FileFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.FilePipelineBuilder&lt;T&gt;">
-    <Position X="13.5" Y="12.5" Width="2.25" />
+    <Position X="15.75" Y="8.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAgAAAAEAAAAAAAABgQAAAAAAAAAAAAE=</HashCode>
       <FileName>Chapter3\Prototype\FilePipelineBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.IoTFactory">
-    <Position X="11.25" Y="7" Width="1.5" />
+    <Position X="12.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter3\Prototype\IoTFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.IoTPipelineBuilder&lt;T&gt;">
-    <Position X="10.75" Y="12.5" Width="2" />
+    <Position X="10.75" Y="8.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAgAAAAEAAAAAAAAAgAAAAAAAAAAAEAA=</HashCode>
       <FileName>Chapter3\Prototype\IoTPipelineBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Book_Pipelines.Chapter3.Prototype.PipelineDirector">
-    <Position X="12" Y="8.75" Width="2.5" />
+    <Position X="13" Y="8.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAATgAAAAAQIEAAAAAAAAAAAA=</HashCode>
       <FileName>Chapter3\Prototype\PipelineDirector.cs</FileName>

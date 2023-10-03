@@ -6,8 +6,8 @@
         public event RegisterStepExecutionDelegate RegisterStepExecution;
         public virtual void RegisterStep(T basicEvent, string step)
         {
-            if (RegisterStepExecution != null)
-                RegisterStepExecution(basicEvent, step);
+            if (this.RegisterStepExecution != null)
+                this.RegisterStepExecution(basicEvent, step);
         }
 
         public bool ShouldSaveMetadata { get; set; }
@@ -16,13 +16,13 @@
 
         public virtual void Process(T basicEvent)
         {
-            if (ShouldSaveMetadata) SaveMetadata(basicEvent);
-            Validate(basicEvent);
-            if (ShouldBePreprocessed) Preprocess(basicEvent);
-            Search(basicEvent);
-            ProcessEvent(basicEvent);
-            if (ShouldBeEventStored) Store(basicEvent);
-            if (ShouldSaveMetadata) UpdateMetadata(basicEvent);
+            if (this.ShouldSaveMetadata) this.SaveMetadata(basicEvent);
+            this.Validate(basicEvent);
+            if (this.ShouldBePreprocessed) this.Preprocess(basicEvent);
+            this.Search(basicEvent);
+            this.ProcessEvent(basicEvent);
+            if (this.ShouldBeEventStored) this.Store(basicEvent);
+            if (this.ShouldSaveMetadata) this.UpdateMetadata(basicEvent);
         }
 
         protected virtual void Preprocess(T basicEvent)

@@ -9,14 +9,14 @@ namespace Book_Pipelines.Chapter_2.BuilderAbstractFactory
 {
     public static class PipelineDirector
     {
-        private static string targetASystemUploadUrl = "http://file.storage.com/systemA/upload";
-        private static string targetASystemApiUrl = "http://systemA.com/api";
+        private static string targetASystemUploadUrl = "http://file.storage.test/systemA/upload";
+        private static string targetASystemApiUrl = "http://systemA.test/api";
 
-        private static string targetBSystemUploadUrl = "http://file.storage.com/systemB/upload";
-        private static string targetBSystemApiUrl = "http://systemB.com/api";
+        private static string targetBSystemUploadUrl = "http://file.storage.test/systemB/upload";
+        private static string targetBSystemApiUrl = "http://systemB.test/api";
 
-        private static string targetCSystemApiUrl = "http://systemC.com/api";
-        private static string targetCSystemProcessingApiUrl = "http://systemC.processing.com/api";
+        private static string targetCSystemApiUrl = "http://systemC.test/api";
+        private static string targetCSystemProcessingApiUrl = "http://systemC.processing.test/api";
 
         public static AbstractPipeline BuildTypeAPipeline()
         {

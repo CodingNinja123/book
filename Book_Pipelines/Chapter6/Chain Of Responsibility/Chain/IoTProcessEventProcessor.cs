@@ -18,16 +18,16 @@ namespace Book_Pipelines.Chapter6.Chain_Of_Responsibility.Chain
 
         public override void Process(IBasicEvent request)
         {
-            if (SystemCApiClient == null)
+            if (this.SystemCApiClient == null)
                 return;
 
             var uploadData = request as IIoTEventData;
             if (uploadData == null)
                 throw new ArgumentException(nameof(request));
 
-            RegisterStep(request, "EVENT_PROCESSING");
+            this.RegisterStep(request, "EVENT_PROCESSING");
             var data = new IoTData(uploadData.Source, uploadData.Action, uploadData.Value);
-            SystemCApiClient.ExecuteRequest(data);
+            this.SystemCApiClient.ExecuteRequest(data);
 
             base.Process(request);
         }

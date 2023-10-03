@@ -18,18 +18,65 @@ namespace Book_Pipelines.Chapter4.Composite
         public ICommunicationClient<string, string> TargetSystemStoreApiClient { get; set; }
         public ICommunicationClient<string, byte[]> DownloadFileClient { get; set; }
 
+        public override void Process(IBasicEvent basicEvent)
+        {
+            var data = basicEvent as IUploadEventData;
+            this.RequestToken();
+            try
+            {
+                if (this.ShouldSaveMetadata)
+                    SaveMetadata(data);
+
+                this.Notify(data, "PROCESSING_STARTED");
+                this.Validate(data);
+
+                if (this.ShouldBeFilePreprocessed)
+                    this.Preprocess(data);
+
+                this.Search(data);
+                this.ProcessEvent(data);
+
+                if (this.ShouldBeEventStored)
+                    this.Store(data);
+
+                if (this.ShouldSaveMetadata)
+                    this.UpdateMetadata(data);
+
+                this.Notify(data, "PROCESSING_FINISHED");
+                Console.WriteLine();
+            }
+            catch (Exception ex)
+            {
+                this.Notify(data, ex.ToString());
+            }
+        }
+
+        public override FileUploadPipeline Copy()
+        {
+            FileUploadPipeline result = new FileUploadPipeline();
+            result.ShouldBeEventStored = this.ShouldBeEventStored;
+            result.ShouldBeFilePreprocessed = this.ShouldBeFilePreprocessed;
+            result.ShouldSaveMetadata = this.ShouldSaveMetadata;
+            result.DownloadFileClient = this.DownloadFileClient;
+            result.TargetSystemSearchApiClient = this.TargetSystemSearchApiClient;
+            result.TargetSystemStoreApiClient = this.TargetSystemStoreApiClient;
+            result.UploadFileClient = this.UploadFileClient;
+            result.token = this.token;
+            return result;
+        }
+
         protected void Preprocess(IUploadEventData basicEvent)
         {
-            Notify(basicEvent, "Preprocessing event");
-            DownloadFileClient.ExecuteRequest(basicEvent.FileUrl);
+            this.Notify(basicEvent, "Preprocessing event");
+            this.DownloadFileClient.ExecuteRequest(basicEvent.FileUrl);
         }
 
         protected void ProcessEvent(IUploadEventData basicEvent)
         {
-            if (UploadFileClient == null)
+            if (this.UploadFileClient == null)
                 return;
 
-            Notify(basicEvent, "Processing event");
+            this.Notify(basicEvent, "Processing event");
             this.UploadFileClient.ExecuteRequest(new UploadFileInfo
             {
                 FileName = basicEvent.FileName,
@@ -39,57 +86,24 @@ namespace Book_Pipelines.Chapter4.Composite
 
         protected void Search(IUploadEventData basicEvent)
         {
-            Notify(basicEvent, "Searching event in the target system");
-            TargetSystemSearchApiClient.ExecuteRequest(basicEvent.FileName);
+            this.Notify(basicEvent, "Searching event in the target system");
+            this.TargetSystemSearchApiClient.ExecuteRequest(basicEvent.FileName);
         }
 
         protected void Store(IUploadEventData basicEvent)
         {
-            Notify(basicEvent, "Storing event in the target system");
-            TargetSystemStoreApiClient.ExecuteRequest(basicEvent.FileName);
-        }
-
-        public override void Process(IBasicEvent basicEvent)
-        {
-            var data = basicEvent as IUploadEventData;
-            RequestToken();
-            try
-            {
-                if (ShouldSaveMetadata)
-                    SaveMetadata(data);
-                
-                Notify(data, "PROCESSING_STARTED");
-                Validate(data);
-                
-                if(ShouldBeFilePreprocessed)
-                    Preprocess(data);
-
-                Search(data);
-                ProcessEvent(data);
-
-                if (ShouldBeEventStored)
-                    Store(data);
-                
-                if(ShouldSaveMetadata)
-                    UpdateMetadata(data);
-                
-                Notify(data, "PROCESSING_FINISHED");
-                Console.WriteLine();
-            }
-            catch (Exception ex)
-            {
-                Notify(data, ex.ToString());
-            }
+            this.Notify(basicEvent, "Storing event in the target system");
+            this.TargetSystemStoreApiClient.ExecuteRequest(basicEvent.FileName);
         }
 
         protected virtual Guid SaveMetadata(IUploadEventData basicEvent)
         {
-            Notify(basicEvent, "Saving metadata");
+            this.Notify(basicEvent, "Saving metadata");
             return Guid.NewGuid();
         }
         protected virtual void UpdateMetadata(IUploadEventData basicEvent)
         {
-            Notify(basicEvent, "Updating metdata");
+            this.Notify(basicEvent, "Updating metdata");
         }
         protected virtual void Notify(IUploadEventData badicEvent, string message)
         {
@@ -107,23 +121,9 @@ namespace Book_Pipelines.Chapter4.Composite
                 throw new ArgumentException("Filename of the event cannot be null");
         }
 
-        public override FileUploadPipeline Copy()
-        {
-            FileUploadPipeline result = new FileUploadPipeline();
-            result.ShouldBeEventStored = this.ShouldBeEventStored;
-            result.ShouldBeFilePreprocessed = this.ShouldBeFilePreprocessed;
-            result.ShouldSaveMetadata = this.ShouldSaveMetadata;
-            result.DownloadFileClient = this.DownloadFileClient;
-            result.TargetSystemSearchApiClient = this.TargetSystemSearchApiClient;
-            result.TargetSystemStoreApiClient = this.TargetSystemStoreApiClient;
-            result.UploadFileClient = this.UploadFileClient;
-            result.token = this.token;
-            return result;
-        }
-
         private void RequestToken()
         {
-            if (!string.IsNullOrWhiteSpace(token))
+            if (!string.IsNullOrWhiteSpace(this.token))
                 return;
 
             Thread.Sleep(200);

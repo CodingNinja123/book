@@ -6,8 +6,8 @@ namespace Book_Pipelines.Chapter_2.Factory
     public class TypeAProcessingPipeline : AbstractPipeline
     {
         private EventTypeAData data = null;
-        private string targetSystemUploadUrl = "http://file.storage.com/systemA/upload";
-        private string targetSystemApiUrl = "http://systemA.com/api";
+        private string targetSystemUploadUrl = "http://file.storage.test/systemA/upload";
+        private string targetSystemApiUrl = "http://systemA.test/api";
 
         protected override object Preprocess(BasicEvent basicEvent)
         {
