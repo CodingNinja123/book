@@ -2,7 +2,7 @@
 
 using System.Diagnostics;
 
-namespace Book_Pipelines.Chapter4.Adapter
+namespace Book_Pipelines.Chapter3.Prototype
 {
     public class PrototypeSection
     {
